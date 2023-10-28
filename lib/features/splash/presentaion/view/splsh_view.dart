@@ -14,10 +14,14 @@ class SplshView extends StatefulWidget {
 class _SplshViewState extends State<SplshView> {
   @override
   void initState() {
+    delayedNavigation();
+    super.initState();
+  }
+
+  void delayedNavigation() {
     Future.delayed(const Duration(seconds: 2), () {
       customNavigate(context, '/onBoarding');
     });
-    super.initState();
   }
 
   @override
