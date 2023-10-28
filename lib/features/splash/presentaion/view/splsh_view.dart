@@ -1,8 +1,8 @@
+import 'package:dalel_app/core/functions/navigator_method.dart';
 import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class SplshView extends StatefulWidget {
   const SplshView({super.key});
@@ -15,13 +15,9 @@ class _SplshViewState extends State<SplshView> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 2), () {
-      customNavigate();
+      customNavigate(context, '/onBoarding');
     });
     super.initState();
-  }
-
-  void customNavigate() {
-    GoRouter.of(context).push('/onBoarding');
   }
 
   @override
