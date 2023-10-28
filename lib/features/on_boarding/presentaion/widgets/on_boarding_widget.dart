@@ -1,4 +1,6 @@
 import 'package:dalel_app/core/utls/app_assets.dart';
+import 'package:dalel_app/core/utls/text_styles.dart';
+import 'package:dalel_app/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingWidgetBody extends StatelessWidget {
@@ -13,6 +15,23 @@ class OnBoardingWidgetBody extends StatelessWidget {
           return Column(
             children: [
               Image.asset(Assets.imageOnBoarding),
+              const SizedBox(
+                height: 23,
+              ),
+              const Text(
+                'Explore the histroy with Dalel in a smart way ',
+                style: CustomTextStyles.poppins500style24,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(
+                height: 23,
+              ),
+              Text('Explore the history with Dalel in a smart way ',
+                  style: CustomTextStyles.poppins500style14),
+              const SizedBox(
+                height: 23,
+              ),
+              const CustomElevatedButton()
             ],
           );
         },
