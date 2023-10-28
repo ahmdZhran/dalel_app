@@ -2,6 +2,7 @@ import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplshView extends StatefulWidget {
   const SplshView({super.key});
@@ -13,7 +14,9 @@ class SplshView extends StatefulWidget {
 class _SplshViewState extends State<SplshView> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 2));
+    Future.delayed(const Duration(seconds: 2), () {
+      GoRouter.of(context).push('/onBording');
+    });
     super.initState();
   }
 
@@ -21,10 +24,11 @@ class _SplshViewState extends State<SplshView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Text(
-        AppStrings.appName,
-        style: CustomTextStyles.pacifico400style64,
-      )),
+        child: Text(
+          AppStrings.appName,
+          style: CustomTextStyles.pacifico400style64,
+        ),
+      ),
     );
   }
 }
