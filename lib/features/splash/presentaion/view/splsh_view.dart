@@ -15,9 +15,13 @@ class _SplshViewState extends State<SplshView> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 2), () {
-      GoRouter.of(context).push('/onBoarding');
+      customNavigate();
     });
     super.initState();
+  }
+
+  void customNavigate() {
+    GoRouter.of(context).push('/onBoarding');
   }
 
   @override
