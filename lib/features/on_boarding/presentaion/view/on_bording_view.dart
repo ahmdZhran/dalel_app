@@ -44,7 +44,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   children: [
                     CustomElevatedButton(
                       onPressed: () {},
-                      text: const Text(AppStrings.skip),
+                      text: const Text(
+                        AppStrings.skip,
+                        style: CustomTextStyles.poppins300style16,
+                      ),
                     ),
                     const Text(AppStrings.loginNow)
                   ],
