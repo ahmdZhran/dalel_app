@@ -25,14 +25,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           const SizedBox(
             height: 40,
           ),
-          Align(
-            alignment: Alignment.topRight,
-            child: Text(
-              AppStrings.skip,
-              style: CustomTextStyles.poppins300style16
-                  .copyWith(fontWeight: FontWeight.bold),
-            ),
-          ),
+          CustomNavBar(),
           OnBoardingWidgetBody(
             controller: _controller,
             onPageChanged: (index) {
@@ -52,6 +45,16 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                         style: CustomTextStyles.poppins300style16,
                       ),
                     ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    GestureDetector(
+                      child: Text(
+                        AppStrings.loginNow,
+                        style: CustomTextStyles.poppins300style16
+                            .copyWith(fontWeight: FontWeight.w400),
+                      ),
+                    )
                   ],
                 )
               : CustomElevatedButton(
