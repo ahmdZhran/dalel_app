@@ -1,6 +1,7 @@
 import 'package:dalel_app/core/utls/app_assets.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
 import 'package:dalel_app/core/widgets/custom_button.dart';
+import 'package:dalel_app/features/on_boarding/data/on_boarding_model.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingWidgetBody extends StatelessWidget {
@@ -10,16 +11,16 @@ class OnBoardingWidgetBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: PageView.builder(
-        itemCount: 3,
+        itemCount: onBoardingData.length,
         itemBuilder: (context, index) {
           return Column(
             children: [
               Container(
                 height: 290,
                 width: 343,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(Assets.imageOnBoarding),
+                    image: AssetImage(onBoardingData[index].imagePath),
                   ),
                 ),
               ),
