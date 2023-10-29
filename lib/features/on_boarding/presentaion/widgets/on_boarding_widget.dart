@@ -1,6 +1,4 @@
-import 'package:dalel_app/core/utls/app_assets.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
-import 'package:dalel_app/core/widgets/custom_button.dart';
 import 'package:dalel_app/features/on_boarding/data/on_boarding_model.dart';
 import 'package:flutter/material.dart';
 
