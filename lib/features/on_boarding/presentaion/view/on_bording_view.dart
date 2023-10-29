@@ -28,7 +28,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           ),
           CustomNavBar(
             onTap: () {
-              customNavigate(context, 'signUpView');
+              customNavigate(context, '/signUpView');
             },
           ),
           OnBoardingWidgetBody(
@@ -54,6 +54,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                       height: 16,
                     ),
                     GestureDetector(
+                      onTap: () {
+                        customNavigate(context, '/signUpView');
+                      },
                       child: Text(
                         AppStrings.loginNow,
                         style: CustomTextStyles.poppins300style16
