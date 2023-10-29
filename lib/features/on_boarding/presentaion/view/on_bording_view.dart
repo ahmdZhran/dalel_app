@@ -1,5 +1,6 @@
 import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
+import 'package:dalel_app/core/widgets/custom_button.dart';
 import 'package:dalel_app/features/on_boarding/presentaion/widgets/on_boarding_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -24,6 +25,10 @@ class OnBoardingView extends StatelessWidget {
             ),
           ),
           const OnBoardingWidgetBody(),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 8.0),
+            child: CustomElevatedButton(),
+          )
         ],
       ),
     ));

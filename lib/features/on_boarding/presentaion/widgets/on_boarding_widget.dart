@@ -38,7 +38,6 @@ class OnBoardingWidgetBody extends StatelessWidget {
               const SizedBox(
                 height: 23,
               ),
-              const CustomElevatedButton()
             ],
           );
         },
