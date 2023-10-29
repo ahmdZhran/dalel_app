@@ -1,3 +1,4 @@
+import 'package:dalel_app/core/functions/navigator_method.dart';
 import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
 import 'package:dalel_app/core/widgets/custom_button.dart';
@@ -43,25 +44,26 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               ? Column(
                   children: [
                     CustomElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        customNavigate(context, '/signUpView');
+                      },
                       text: const Text(
-                        AppStrings.skip,
+                        AppStrings.createAccount,
                         style: CustomTextStyles.poppins300style16,
                       ),
                     ),
-                    const Text(AppStrings.loginNow)
                   ],
                 )
-              : Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
-                  child: CustomElevatedButton(
-                    onPressed: () {
-                      _controller.nextPage(
-                        duration: const Duration(microseconds: 200),
-                        curve: Curves.bounceIn,
-                      );
-                    },
-                    text: const Text('data'),
+              : CustomElevatedButton(
+                  onPressed: () {
+                    _controller.nextPage(
+                      duration: const Duration(microseconds: 200),
+                      curve: Curves.bounceIn,
+                    );
+                  },
+                  text: const Text(
+                    'Next',
+                    style: CustomTextStyles.poppins300style16,
                   ),
                 )
         ],

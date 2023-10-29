@@ -15,7 +15,7 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const OnBoardingView(),
     ),
     GoRoute(
-      path: '/SignUpView',
+      path: '/signUpView',
       builder: (context, state) => const SignUpView(),
     )
   ],
