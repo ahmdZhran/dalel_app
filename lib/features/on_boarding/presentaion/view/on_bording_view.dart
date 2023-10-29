@@ -13,7 +13,7 @@ class OnBoardingView extends StatefulWidget {
 
 class _OnBoardingViewState extends State<OnBoardingView> {
   final PageController _controller = PageController(initialPage: 0);
-
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
