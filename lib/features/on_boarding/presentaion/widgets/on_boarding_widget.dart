@@ -5,13 +5,13 @@ import 'package:dalel_app/features/on_boarding/data/on_boarding_model.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingWidgetBody extends StatelessWidget {
-  const OnBoardingWidgetBody({super.key, required this.pageController});
-  final PageController pageController;
+  const OnBoardingWidgetBody({super.key, required this.controller});
+  final PageController controller;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: PageView.builder(
-        controller: pageController,
+        controller: controller,
         itemCount: onBoardingData.length,
         itemBuilder: (context, index) {
           return Column(

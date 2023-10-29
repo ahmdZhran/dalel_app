@@ -12,7 +12,7 @@ class OnBoardingView extends StatefulWidget {
 }
 
 class _OnBoardingViewState extends State<OnBoardingView> {
-  final PageController pageController = PageController(initialPage: 0);
+  final PageController _controller = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +32,18 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             ),
           ),
           OnBoardingWidgetBody(
-            pageController: pageController,
+            controller: _controller,
           ),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 8.0),
-            child: CustomElevatedButton(),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: CustomElevatedButton(
+              onPressed: () {
+                _controller.nextPage(
+                  duration: const Duration(microseconds: 200),
+                  curve: Curves.bounceIn,
+                );
+              },
+            ),
           )
         ],
       ),
