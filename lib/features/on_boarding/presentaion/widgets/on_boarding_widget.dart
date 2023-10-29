@@ -28,6 +28,7 @@ class OnBoardingWidgetBody extends StatelessWidget {
                 'Explore the histroy with Dalel in a smart way ',
                 style: CustomTextStyles.poppins500style24,
                 textAlign: TextAlign.center,
+                maxLines: 2,
               ),
               const SizedBox(
                 height: 23,
