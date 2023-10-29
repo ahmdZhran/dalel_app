@@ -14,7 +14,18 @@ class OnBoardingModel {
 
 List<OnBoardingModel> onBoardingData = [
   OnBoardingModel(
-      imagePath: Assets.imageOnBoarding,
-      title: 'Explore the histroy with Dalel in a smart way ',
-      subTitle: 'Explore the history with dalel in a smart way ')
+    imagePath: Assets.imageOnBoarding,
+    title: 'Explore the histroy with Dalel in a smart way ',
+    subTitle: 'Explore the history with dalel in a smart way ',
+  ),
+  OnBoardingModel(
+    imagePath: Assets.imageOnBoarding1,
+    title: 'Explore the histroy with Dalel in a smart way ',
+    subTitle: 'Explore the history with dalel in a smart way ',
+  ),
+  OnBoardingModel(
+    imagePath: Assets.imageOnBoarding2,
+    title: 'Explore the histroy with Dalel in a smart way ',
+    subTitle: 'Explore the history with dalel in a smart way ',
+  ),
 ];
