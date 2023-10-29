@@ -33,6 +33,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           ),
           OnBoardingWidgetBody(
             controller: _controller,
+            onPageChanged: (index) {
+              currentIndex = index;
+            },
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: 8.0),
