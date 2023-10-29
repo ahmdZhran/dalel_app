@@ -35,24 +35,32 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           OnBoardingWidgetBody(
             controller: _controller,
             onPageChanged: (index) {
+              setState(() {});
               currentIndex = index;
             },
           ),
-          currentIndex == onBoardingData.length-1 ? Column(children: [
-            CustomElevatedButton(onPressed: (){}),
-            CustomElevatedButton(onPressed: (){})
-          ],)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
-            child: CustomElevatedButton(
-              onPressed: () {
-                _controller.nextPage(
-                  duration: const Duration(microseconds: 200),
-                  curve: Curves.bounceIn,
-                );
-              },
-            ),
-          )
+          currentIndex == onBoardingData.length - 1
+              ? Column(
+                  children: [
+                    CustomElevatedButton(
+                      onPressed: () {},
+                      text: const Text(AppStrings.skip),
+                    ),
+                    const Text(AppStrings.loginNow)
+                  ],
+                )
+              : Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: CustomElevatedButton(
+                    onPressed: () {
+                      _controller.nextPage(
+                        duration: const Duration(microseconds: 200),
+                        curve: Curves.bounceIn,
+                      );
+                    },
+                    text: const Text('data'),
+                  ),
+                )
         ],
       ),
     ));
