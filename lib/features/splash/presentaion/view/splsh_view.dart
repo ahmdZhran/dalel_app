@@ -20,7 +20,7 @@ class _SplshViewState extends State<SplshView> {
 
   void delayedNavigation() {
     Future.delayed(const Duration(seconds: 2), () {
-      customNavigate(context, '/onBoarding');
+      customReplacementNavigate(context, '/onBoarding');
     });
   }
 
