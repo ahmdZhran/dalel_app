@@ -2,9 +2,11 @@ import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton({super.key, this.color, required this.onPressed});
+  const CustomElevatedButton(
+      {super.key, this.color, required this.onPressed, required this.text});
   final Color? color;
   final VoidCallback onPressed;
+  final Text text;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -18,7 +20,7 @@ class CustomElevatedButton extends StatelessWidget {
           ),
         ),
         onPressed: onPressed,
-        child: const Text('start'),
+        child: text,
       ),
     );
   }
