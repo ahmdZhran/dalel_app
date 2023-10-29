@@ -4,6 +4,7 @@ import 'package:dalel_app/core/utls/text_styles.dart';
 import 'package:dalel_app/core/widgets/custom_button.dart';
 import 'package:dalel_app/features/on_boarding/data/on_boarding_model.dart';
 import 'package:dalel_app/features/on_boarding/presentaion/widgets/custom_nav_bar.dart';
+import 'package:dalel_app/features/on_boarding/presentaion/widgets/get_buttons.dart';
 import 'package:dalel_app/features/on_boarding/presentaion/widgets/on_boarding_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -20,65 +21,28 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 40,
-          ),
-          CustomNavBar(
-            onTap: () {
-              customNavigate(context, '/signUpView');
-            },
-          ),
-          OnBoardingWidgetBody(
-            controller: _controller,
-            onPageChanged: (index) {
-              setState(() {});
-              currentIndex = index;
-            },
-          ),
-          currentIndex == onBoardingData.length - 1
-              ? Column(
-                  children: [
-                    CustomElevatedButton(
-                      onPressed: () {
-                        customNavigate(context, '/signUpView');
-                      },
-                      text: const Text(
-                        AppStrings.createAccount,
-                        style: CustomTextStyles.poppins300style16,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        customNavigate(context, '/signUpView');
-                      },
-                      child: Text(
-                        AppStrings.loginNow,
-                        style: CustomTextStyles.poppins300style16
-                            .copyWith(fontWeight: FontWeight.w400),
-                      ),
-                    )
-                  ],
-                )
-              : CustomElevatedButton(
-                  onPressed: () {
-                    _controller.nextPage(
-                      duration: const Duration(microseconds: 200),
-                      curve: Curves.bounceIn,
-                    );
-                  },
-                  text: const Text(
-                    'Next',
-                    style: CustomTextStyles.poppins300style16,
-                  ),
-                )
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 40,
+            ),
+            CustomNavBar(
+              onTap: () {
+                customReplacementNavigate(context, '/signUpView');
+              },
+            ),
+            OnBoardingWidgetBody(
+              controller: _controller,
+              onPageChanged: (index) {
+                setState(() {});
+                currentIndex = index;
+              },
+            ),
+            GetButtons(currentIndex: currentIndex, controller: _controller)
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
