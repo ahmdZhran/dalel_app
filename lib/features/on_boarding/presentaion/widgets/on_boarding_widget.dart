@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class OnBoardingWidgetBody extends StatelessWidget {
   const OnBoardingWidgetBody({super.key, required this.pageController});
-final PageController pageController
+  final PageController pageController;
   @override
   Widget build(BuildContext context) {
     return Expanded(
