@@ -12,7 +12,7 @@ class OnBoardingView extends StatefulWidget {
 }
 
 class _OnBoardingViewState extends State<OnBoardingView> {
-  final PageController _pageController = PageController();
+  final PageController pageController = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   .copyWith(fontWeight: FontWeight.bold),
             ),
           ),
-          const OnBoardingWidgetBody(),
+          OnBoardingWidgetBody(
+            pageController: pageController,
+          ),
           const Padding(
             padding: EdgeInsets.only(bottom: 8.0),
             child: CustomElevatedButton(),
