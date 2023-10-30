@@ -3,6 +3,7 @@ import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
 import 'package:dalel_app/core/widgets/custom_button.dart';
 import 'package:dalel_app/features/on_boarding/data/on_boarding_model.dart';
+import 'package:dalel_app/features/on_boarding/functions/on_boarding.dart';
 import 'package:flutter/material.dart';
 
 class GetButtons extends StatelessWidget {
@@ -17,6 +18,7 @@ class GetButtons extends StatelessWidget {
         children: [
           CustomElevatedButton(
             onPressed: () {
+              onBoardingVisited();
               customReplacementNavigate(context, '/signUpView');
             },
             text: const Text(
