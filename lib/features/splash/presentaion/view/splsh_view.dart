@@ -1,3 +1,4 @@
+import 'package:dalel_app/core/database/cach/cash_helper.dart';
 import 'package:dalel_app/core/functions/navigator_method.dart';
 import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
@@ -14,13 +15,20 @@ class SplshView extends StatefulWidget {
 class _SplshViewState extends State<SplshView> {
   @override
   void initState() {
-    delayedNavigation();
+    bool isBoardingVisited =
+        CacheHelper().getData(key: 'isBoardingVisited') ?? false;
+    if (isBoardingVisited == true) {
+      delayedNavigation(context, '/signUpView');
+    } else {
+      delayedNavigation(context, '/onBoarding');
+    }
+
     super.initState();
   }
 
-  void delayedNavigation() {
+  void delayedNavigation(context, path) {
     Future.delayed(const Duration(seconds: 2), () {
-      customReplacementNavigate(context, '/onBoarding');
+      customReplacementNavigate(context, path);
     });
   }
 
