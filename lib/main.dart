@@ -1,7 +1,10 @@
+import 'package:dalel_app/core/database/cach/cash_helper.dart';
 import 'package:dalel_app/core/router/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  CacheHelper().init();
   runApp(const MyApp());
 }
 
