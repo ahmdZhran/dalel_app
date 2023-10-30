@@ -27,8 +27,6 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             ),
             CustomNavBar(
               onTap: () {
-                getIt<CacheHelper>()
-                    .saveData(key: 'isBoardingVisited', value: true);
                 customReplacementNavigate(context, '/signUpView');
               },
             ),
