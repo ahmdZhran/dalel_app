@@ -7,11 +7,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setUpServiceLocator();
   await getIt<CacheHelper>().init();
-  runApp(const MyApp());
+  runApp(const Dalel());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Dalel extends StatelessWidget {
+  const Dalel({super.key});
 
   @override
   Widget build(BuildContext context) {
