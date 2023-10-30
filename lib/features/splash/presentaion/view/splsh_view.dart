@@ -1,3 +1,4 @@
+import 'package:dalel_app/core/Services/service_locator.dart';
 import 'package:dalel_app/core/database/cach/cash_helper.dart';
 import 'package:dalel_app/core/functions/navigator_method.dart';
 import 'package:dalel_app/core/utls/app_strings.dart';
@@ -16,7 +17,7 @@ class _SplshViewState extends State<SplshView> {
   @override
   void initState() {
     bool isBoardingVisited =
-        CacheHelper().getData(key: 'isBoardingVisited') ?? false;
+        getIt<CacheHelper>().getData(key: 'isBoardingVisited') ?? false;
     if (isBoardingVisited == true) {
       delayedNavigation(context, '/signUpView');
     } else {
