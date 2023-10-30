@@ -1,8 +1,4 @@
 import 'package:dalel_app/core/functions/navigator_method.dart';
-import 'package:dalel_app/core/utls/app_strings.dart';
-import 'package:dalel_app/core/utls/text_styles.dart';
-import 'package:dalel_app/core/widgets/custom_button.dart';
-import 'package:dalel_app/features/on_boarding/data/on_boarding_model.dart';
 import 'package:dalel_app/features/on_boarding/presentaion/widgets/custom_nav_bar.dart';
 import 'package:dalel_app/features/on_boarding/presentaion/widgets/get_buttons.dart';
 import 'package:dalel_app/features/on_boarding/presentaion/widgets/on_boarding_widget.dart';
