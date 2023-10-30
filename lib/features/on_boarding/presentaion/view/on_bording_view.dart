@@ -1,3 +1,4 @@
+import 'package:dalel_app/core/database/cach/cash_helper.dart';
 import 'package:dalel_app/core/functions/navigator_method.dart';
 import 'package:dalel_app/features/on_boarding/presentaion/widgets/custom_nav_bar.dart';
 import 'package:dalel_app/features/on_boarding/presentaion/widgets/get_buttons.dart';
@@ -25,6 +26,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             ),
             CustomNavBar(
               onTap: () {
+                CacheHelper().saveData(key: 'isBoardingVisited', value: true);
                 customReplacementNavigate(context, '/signUpView');
               },
             ),
