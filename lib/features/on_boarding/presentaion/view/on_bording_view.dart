@@ -1,5 +1,3 @@
-import 'package:dalel_app/core/Services/service_locator.dart';
-import 'package:dalel_app/core/database/cach/cash_helper.dart';
 import 'package:dalel_app/core/functions/navigator_method.dart';
 import 'package:dalel_app/features/on_boarding/functions/on_boarding.dart';
 import 'package:dalel_app/features/on_boarding/presentaion/widgets/custom_nav_bar.dart';
