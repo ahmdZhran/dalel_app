@@ -1,10 +1,7 @@
-import 'dart:ffi';
-
 import 'package:dalel_app/core/utls/app_strings.dart';
-import 'package:dalel_app/core/utls/text_styles.dart';
 import 'package:dalel_app/core/widgets/custom_button.dart';
-import 'package:dalel_app/features/Auth/presentaion/widgets/custom_check_box.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/custom_text_form.dart';
+import 'package:dalel_app/features/Auth/presentaion/widgets/have_an_account_widget.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/terms_and_condidtion.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/welcom_text_widget.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +60,18 @@ class SignUpView extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 20,
+            ),
+          ),
+          const SliverToBoxAdapter(
+            child: HaveAnAccountWidget(
+              text1: AppStrings.alreadyHaveAnAccount,
+              text2: AppStrings.signUp,
+            ),
+          ),
         ],
       ),
     );
