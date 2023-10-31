@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
+import 'package:dalel_app/core/widgets/custom_button.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/custom_check_box.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/custom_text_form.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/terms_and_condidtion.dart';
@@ -13,41 +14,55 @@ class SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 152,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: WelcomTextWidget(
               text: AppStrings.welcome,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: CustomTextField(
               labelText: AppStrings.fristName,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: CustomTextField(
               labelText: AppStrings.lastName,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: CustomTextField(
               labelText: AppStrings.emailAddress,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: CustomTextField(
               labelText: AppStrings.password,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: TermsAndConditionsWidget(),
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(height: 80),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomElevatedButton(
+                onPressed: () {},
+                text: const Text(
+                  AppStrings.signUp,
+                ),
+              ),
+            ),
           )
         ],
       ),
