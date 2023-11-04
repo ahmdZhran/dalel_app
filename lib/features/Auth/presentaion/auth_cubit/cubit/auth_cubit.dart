@@ -6,14 +6,17 @@ part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
-  signUpWithEmailAndPassword(
-      {required String emailAddress, required String password}) async {
+  late String? firstName;
+  late String? lastName;
+  late String? emailAdress;
+  late String? password;
+  signUpWithEmailAndPassword() async {
     try {
       emit(SignupLoadingState());
       final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: emailAddress,
-        password: password,
+        email: emailAdress!,
+        password: password!,
       );
       emit(SignupSuccessState());
     } on FirebaseAuthException catch (e) {
