@@ -45,11 +45,12 @@ class CustomSignUpForm extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: CustomElevatedButton(
-                    onPressed: () {
-                      BlocProvider.of<AuthCubit>(context)
-                          .signUpWithEmailAndPassword();
-                    },
-                    text: const Text(AppStrings.signUp)),
+                  onPressed: () {
+                    BlocProvider.of<AuthCubit>(context)
+                        .signUpWithEmailAndPassword();
+                  },
+                  text: const Text(AppStrings.signUp),
+                ),
               )
             ],
           ),
