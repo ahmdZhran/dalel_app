@@ -39,9 +39,17 @@ class CustomSignUpForm extends StatelessWidget {
                 },
               ),
               CustomTextFromField(
-                suffixIcon: IconButton(icon: ,onPressed: () {
-                  
-                },),
+                obscureText: authCubit.obsecurePasswordText,
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    authCubit.obsecurePasswordText == false
+                        ? Icons.visibility_outlined
+                        : Icons.visibility_off,
+                  ),
+                  onPressed: () {
+                    authCubit.obsecurePassword();
+                  },
+                ),
                 labelText: AppStrings.password,
                 onChanged: (password) {
                   authCubit.password = password;
