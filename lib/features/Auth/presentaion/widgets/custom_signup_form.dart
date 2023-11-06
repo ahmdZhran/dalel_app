@@ -1,3 +1,4 @@
+import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/core/widgets/custom_button.dart';
 import 'package:dalel_app/features/Auth/presentaion/auth_cubit/cubit/auth_cubit.dart';
@@ -47,9 +48,14 @@ class CustomSignUpForm extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: CustomElevatedButton(
+                  color: authCubit.termsAndCondidtionCheckBox == false
+                      ? AppColors.grey
+                      : null,
                   onPressed: () {
-                    if (authCubit.signupFormKey.currentState!.validate()) {
-                      authCubit.signUpWithEmailAndPassword();
+                    if (authCubit.termsAndCondidtionCheckBox == true) {
+                      if (authCubit.signupFormKey.currentState!.validate()) {
+                        authCubit.signUpWithEmailAndPassword();
+                      }
                     }
                   },
                   text: const Text(AppStrings.signUp),
