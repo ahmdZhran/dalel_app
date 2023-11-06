@@ -16,6 +16,7 @@ class CustomSignUpForm extends StatelessWidget {
       builder: (context, state) {
         AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
         return Form(
+          key: authCubit.signupFormKey,
           child: Column(
             children: [
               CustomTextFromField(
@@ -47,7 +48,9 @@ class CustomSignUpForm extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 child: CustomElevatedButton(
                   onPressed: () {
-                    authCubit.signUpWithEmailAndPassword();
+                    if (authCubit.signupFormKey.currentState!.validate()) {
+                      authCubit.signUpWithEmailAndPassword();
+                    }
                   },
                   text: const Text(AppStrings.signUp),
                 ),
