@@ -39,5 +39,6 @@ class AuthCubit extends Cubit<AuthState> {
 
   updateTermsAndConditionsCheckBox({required newValue}) {
     termsAndCondidtionCheckBox = newValue;
+    emit(TermsAndConditionsUpdateState());
   }
 }

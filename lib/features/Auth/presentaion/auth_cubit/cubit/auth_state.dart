@@ -15,4 +15,4 @@ final class SignupFailureState extends AuthState {
   SignupFailureState({required this.errMessage});
 }
 
-final class TermsAndConditionsUpdateState extends AuthCubit {}
+final class TermsAndConditionsUpdateState extends AuthState {}
