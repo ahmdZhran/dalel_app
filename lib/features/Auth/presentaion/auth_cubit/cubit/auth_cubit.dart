@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,6 +12,7 @@ class AuthCubit extends Cubit<AuthState> {
   String? lastName;
   String? emailAdress;
   String? password;
+  bool? termsAndCondidtionCheckBox;
   GlobalKey<FormState> signupFormKey = GlobalKey();
   signUpWithEmailAndPassword() async {
     try {
@@ -32,5 +35,9 @@ class AuthCubit extends Cubit<AuthState> {
       print(e.toString());
       emit(SignupFailureState(errMessage: e.toString()));
     }
+  }
+
+  updateTermsAndConditionsCheckBox({required newValue}) {
+    termsAndCondidtionCheckBox = newValue;
   }
 }
