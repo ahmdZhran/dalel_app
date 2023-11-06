@@ -1,4 +1,5 @@
 import 'package:dalel_app/core/functions/flutter_toast.dart';
+import 'package:dalel_app/core/functions/navigator_method.dart';
 import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/core/widgets/custom_button.dart';
@@ -17,6 +18,7 @@ class CustomSignUpForm extends StatelessWidget {
       listener: (context, state) {
         if (state is SignupSuccessState) {
           showToast('Your account added succefully');
+          customReplacementNavigate(context, '/signInView');
         } else if (state is SignupFailureState) {
           showToast(state.errMessage);
         }
@@ -68,6 +70,9 @@ class CustomSignUpForm extends StatelessWidget {
                   : Padding(
                       padding: const EdgeInsets.all(10),
                       child: CustomElevatedButton(
+                        onTap: () {
+                          customNavigate(context, '/signInView');
+                        },
                         color: authCubit.termsAndCondidtionCheckBox == false
                             ? AppColors.grey
                             : null,
