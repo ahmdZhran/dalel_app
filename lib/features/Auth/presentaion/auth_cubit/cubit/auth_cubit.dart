@@ -6,15 +6,16 @@ part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
-  late String? firstName;
-  late String? lastName;
-  late String? emailAdress;
-  late String? password;
+  String? firstName;
+  String? lastName;
+  String? emailAdress;
+  String? password;
+  GlobalKey<FormState> signupFormKey = GlobalKey();
   signUpWithEmailAndPassword() async {
     try {
       emit(SignupLoadingState());
-      final credential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailAdress!,
         password: password!,
       );
@@ -28,6 +29,7 @@ class AuthCubit extends Cubit<AuthState> {
             errMessage: 'The account already exists for that email.'));
       }
     } catch (e) {
+      print(e.toString());
       emit(SignupFailureState(errMessage: e.toString()));
     }
   }

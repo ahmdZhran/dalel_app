@@ -14,31 +14,32 @@ class CustomSignUpForm extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {},
       builder: (context, state) {
+        AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
         return Form(
           child: Column(
             children: [
               CustomTextFromField(
                 labelText: AppStrings.fristName,
                 onChanged: (firstName) {
-                  BlocProvider.of<AuthCubit>(context).firstName = firstName;
+                  authCubit.firstName = firstName;
                 },
               ),
               CustomTextFromField(
                 labelText: AppStrings.lastName,
                 onChanged: (lastName) {
-                  BlocProvider.of<AuthCubit>(context).lastName = lastName;
+                  authCubit.lastName = lastName;
                 },
               ),
               CustomTextFromField(
                 labelText: AppStrings.emailAddress,
                 onChanged: (emailAdress) {
-                  BlocProvider.of<AuthCubit>(context).emailAdress = emailAdress;
+                  authCubit.emailAdress = emailAdress;
                 },
               ),
               CustomTextFromField(
                 labelText: AppStrings.password,
                 onChanged: (password) {
-                  BlocProvider.of<AuthCubit>(context).password = password;
+                  authCubit.password = password;
                 },
               ),
               const TermsAndConditionsWidget(),
@@ -46,8 +47,7 @@ class CustomSignUpForm extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 child: CustomElevatedButton(
                   onPressed: () {
-                    BlocProvider.of<AuthCubit>(context)
-                        .signUpWithEmailAndPassword();
+                    authCubit.signUpWithEmailAndPassword();
                   },
                   text: const Text(AppStrings.signUp),
                 ),
