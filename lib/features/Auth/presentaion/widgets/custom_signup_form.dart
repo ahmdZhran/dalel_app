@@ -56,22 +56,25 @@ class CustomSignUpForm extends StatelessWidget {
                 },
               ),
               const TermsAndConditionsWidget(),
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: CustomElevatedButton(
-                  color: authCubit.termsAndCondidtionCheckBox == false
-                      ? AppColors.grey
-                      : null,
-                  onPressed: () {
-                    if (authCubit.termsAndCondidtionCheckBox == true) {
-                      if (authCubit.signupFormKey.currentState!.validate()) {
-                        authCubit.signUpWithEmailAndPassword();
-                      }
-                    }
-                  },
-                  text: const Text(AppStrings.signUp),
-                ),
-              )
+              state is SignupLoadingState
+                  ? const CircularProgressIndicator()
+                  : Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: CustomElevatedButton(
+                        color: authCubit.termsAndCondidtionCheckBox == false
+                            ? AppColors.grey
+                            : null,
+                        onPressed: () {
+                          if (authCubit.termsAndCondidtionCheckBox == true) {
+                            if (authCubit.signupFormKey.currentState!
+                                .validate()) {
+                              authCubit.signUpWithEmailAndPassword();
+                            }
+                          }
+                        },
+                        text: const Text(AppStrings.signUp),
+                      ),
+                    )
             ],
           ),
         );
