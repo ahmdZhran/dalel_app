@@ -44,5 +44,6 @@ class AuthCubit extends Cubit<AuthState> {
 
   void obsecurePassword() {
     obsecurePasswordText = !obsecurePasswordText;
+    emit(ObsecurePassowrdTextState());
   }
 }

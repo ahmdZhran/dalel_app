@@ -39,6 +39,9 @@ class CustomSignUpForm extends StatelessWidget {
                 },
               ),
               CustomTextFromField(
+                suffixIcon: IconButton(icon: ,onPressed: () {
+                  
+                },),
                 labelText: AppStrings.password,
                 onChanged: (password) {
                   authCubit.password = password;
