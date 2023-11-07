@@ -1,8 +1,5 @@
-import 'package:dalel_app/core/utls/app_assets.dart';
-import 'package:dalel_app/core/utls/app_color.dart';
-import 'package:dalel_app/core/utls/text_styles.dart';
+import 'package:dalel_app/features/Auth/presentaion/widgets/welcom_panner_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({super.key});
