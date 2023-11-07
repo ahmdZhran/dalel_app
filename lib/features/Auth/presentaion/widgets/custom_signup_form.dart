@@ -18,7 +18,7 @@ class CustomSignUpForm extends StatelessWidget {
       listener: (context, state) {
         if (state is SignupSuccessState) {
           showToast('Your account added succefully');
-          customReplacementNavigate(context, '/signInView');
+          customReplacementNavigate(context, '/homeView');
         } else if (state is SignupFailureState) {
           showToast(state.errMessage);
         }
@@ -71,7 +71,7 @@ class CustomSignUpForm extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       child: CustomElevatedButton(
                         onTap: () {
-                          customNavigate(context, '/signInView');
+                          customNavigate(context, '/homeView');
                         },
                         color: authCubit.termsAndCondidtionCheckBox == false
                             ? AppColors.grey
