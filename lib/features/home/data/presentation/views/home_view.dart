@@ -1,3 +1,6 @@
+import 'package:dalel_app/core/functions/navigator_method.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -7,8 +10,13 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: const [
-          Icon(Icons.logout),
+        actions: [
+          IconButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+                customReplacementNavigate(context, '/signInView');
+              },
+              icon: const Icon(Icons.logout)),
         ],
       ),
       body: const Center(
