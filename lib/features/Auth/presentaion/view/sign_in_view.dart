@@ -1,3 +1,5 @@
+import 'package:dalel_app/core/functions/navigator_method.dart';
+
 import 'package:flutter/material.dart';
 
 class SignInView extends StatelessWidget {
@@ -5,6 +7,19 @@ class SignInView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+              onPressed: () {
+                customNavigate(context, '/signUpView');
+              },
+              icon: const Icon(Icons.logout)),
+        ],
+      ),
+      body: const Center(
+        child: Text("this is sign in view"),
+      ),
+    );
   }
 }

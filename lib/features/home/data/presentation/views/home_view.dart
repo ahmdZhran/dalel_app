@@ -12,11 +12,12 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-                customReplacementNavigate(context, '/signInView');
-              },
-              icon: const Icon(Icons.logout)),
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+              customReplacementNavigate(context, '/signInView');
+            },
+            icon: const Icon(Icons.logout),
+          ),
         ],
       ),
       body: const Center(
