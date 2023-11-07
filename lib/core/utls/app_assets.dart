@@ -1,6 +1,6 @@
 class Assets {
   Assets._();
-  
+
   /// Assets for imageFrame
   /// assets/image/Frame.png
   static const String imageFrame = "assets/image/Frame.png";
@@ -24,4 +24,6 @@ class Assets {
   /// Assets for imagePersonActive
   /// assets/image/person-active.svg
   static const String imagePersonActive = "assets/image/person-active.svg";
+  static const String imageVector = "assets/image/vector1.svg";
+  static const String imageVctor2 = "assets/image/vector2.svg";
 }
