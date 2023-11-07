@@ -1,4 +1,5 @@
 import 'package:dalel_app/core/utls/app_color.dart';
+import 'package:dalel_app/core/utls/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class SignInView extends StatelessWidget {
@@ -29,7 +30,10 @@ class WelcomPannerWidget extends StatelessWidget {
       child: const Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Text('Dalel'),
+          Text(
+            'Dalel',
+            style: CustomTextStyles.saira700style32,
+          ),
         ],
       ),
     );
