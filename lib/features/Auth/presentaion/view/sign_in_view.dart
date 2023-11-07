@@ -20,27 +20,3 @@ class SignInView extends StatelessWidget {
     );
   }
 }
-
-class WelcomPannerWidget extends StatelessWidget {
-  const WelcomPannerWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: AppColors.primaryColor),
-      height: 290,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          const Text(
-            'Dalel',
-            style: CustomTextStyles.saira700style32,
-          ),
-          Row(
-            children: [SvgPicture.asset(Assets.)],
-          )
-        ],
-      ),
-    );
-  }
-}

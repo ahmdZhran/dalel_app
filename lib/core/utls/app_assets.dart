@@ -25,5 +25,5 @@ class Assets {
   /// assets/image/person-active.svg
   static const String imagePersonActive = "assets/image/person-active.svg";
   static const String imageVector = "assets/image/vector1.svg";
-  static const String imageVctor2 = "assets/image/vector2.svg";
+  static const String imageVector2 = "assets/image/vector2.svg";
 }
