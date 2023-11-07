@@ -1,3 +1,4 @@
+import 'package:dalel_app/core/functions/navigator_method.dart';
 import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/custom_signup_form.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/have_an_account_widget.dart';
@@ -9,26 +10,26 @@ class SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 152,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: WelcomTextWidget(
               text: AppStrings.welcome,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: CustomSignUpForm(),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(height: 80),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 20,
             ),
@@ -36,7 +37,10 @@ class SignUpView extends StatelessWidget {
           SliverToBoxAdapter(
             child: HaveAnAccountWidget(
               text1: AppStrings.alreadyHaveAnAccount,
-              text2: AppStrings.signUp,
+              text2: AppStrings.signIn,
+              onTap: () {
+                customNavigate(context, '/signInView');
+              },
             ),
           ),
         ],

@@ -6,6 +6,8 @@ import 'package:dalel_app/features/splash/presentaion/view/splsh_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/Auth/presentaion/view/sign_up_view.dart';
+
 final GoRouter router = GoRouter(
   routes: [
     GoRoute(
@@ -15,6 +17,13 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/onBoarding',
       builder: (context, state) => const OnBoardingView(),
+    ),
+    GoRoute(
+      path: '/signUpView',
+      builder: (context, state) => BlocProvider(
+        create: (context) => AuthCubit(),
+        child: const SignUpView(),
+      ),
     ),
     GoRoute(
       path: '/signInView',

@@ -1,5 +1,4 @@
-import 'package:dalel_app/core/functions/navigator_method.dart';
-
+import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:flutter/material.dart';
 
 class SignInView extends StatelessWidget {
@@ -7,18 +6,31 @@ class SignInView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: () {
-                customNavigate(context, '/signUpView');
-              },
-              icon: const Icon(Icons.logout)),
+    return const Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: WelcomPannerWidget(),
+          )
         ],
       ),
-      body: const Center(
-        child: Text("this is sign in view"),
+    );
+  }
+}
+
+class WelcomPannerWidget extends StatelessWidget {
+  const WelcomPannerWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(color: AppColors.primaryColor),
+      height: 290,
+      child: const Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Text('Dalel'),
+        ],
       ),
     );
   }

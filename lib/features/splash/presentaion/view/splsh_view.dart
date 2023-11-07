@@ -3,6 +3,7 @@ import 'package:dalel_app/core/database/cach/cash_helper.dart';
 import 'package:dalel_app/core/functions/navigator_method.dart';
 import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,9 @@ class _SplshViewState extends State<SplshView> {
     bool isBoardingVisited =
         getIt<CacheHelper>().getData(key: 'isBoardingVisited') ?? false;
     if (isBoardingVisited == true) {
-      delayedNavigation(context, '/signUpView');
+      FirebaseAuth.instance.currentUser == null
+          ? delayedNavigation(context, '/signInView')
+          : delayedNavigation(context, '/homeView');
     } else {
       delayedNavigation(context, '/onBoarding');
     }

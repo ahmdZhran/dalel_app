@@ -71,7 +71,7 @@ class CustomSignUpForm extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       child: CustomElevatedButton(
                         onTap: () {
-                          customNavigate(context, '/homeView');
+                          customNavigate(context, '/signInView');
                         },
                         color: authCubit.termsAndCondidtionCheckBox == false
                             ? AppColors.grey
