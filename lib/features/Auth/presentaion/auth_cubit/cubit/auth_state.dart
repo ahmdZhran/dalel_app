@@ -19,7 +19,7 @@ final class TermsAndConditionsUpdateState extends AuthState {}
 
 final class ObsecurePassowrdTextState extends AuthState {}
 
-final class SigninLoadingState extends AuthState {}
+final class SignInLoadingState extends AuthState {}
 
 final class SigninSuccessState extends AuthState {}
 

@@ -19,10 +19,10 @@ class CustomSignInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
-        if (state is SignupSuccessState) {
-          showToast('Your account added succefully');
+        if (state is SigninSuccessState) {
+          showToast('WlcomBack !');
           customReplacementNavigate(context, '/homeView');
-        } else if (state is SignupFailureState) {
+        } else if (state is SigninFailureState) {
           showToast(state.errMessage);
         }
       },
@@ -58,7 +58,7 @@ class CustomSignInForm extends StatelessWidget {
               const Gap(20),
               const ForgetPasswordTextWidget(),
               const Gap(80),
-              state is SignupLoadingState
+              state is SignInLoadingState
                   ? const CircularProgressIndicator()
                   : Padding(
                       padding: const EdgeInsets.all(10),
@@ -69,7 +69,9 @@ class CustomSignInForm extends StatelessWidget {
                         color: AppColors.primaryColor,
                         onPressed: () {
                           if (authCubit.signinFormKey.currentState!
-                              .validate()) {}
+                              .validate()) {
+                            authCubit.signInWithEmailAndPassowrd();
+                          }
                         },
                         text: Text(
                           AppStrings.signIn,
