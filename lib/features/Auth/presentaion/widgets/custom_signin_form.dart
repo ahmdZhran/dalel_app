@@ -5,7 +5,7 @@ import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/core/widgets/custom_button.dart';
 import 'package:dalel_app/features/Auth/presentaion/auth_cubit/cubit/auth_cubit.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/custom_text_form.dart';
-import 'package:dalel_app/features/Auth/presentaion/widgets/terms_and_condidtion.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,21 +26,9 @@ class CustomSignUpForm extends StatelessWidget {
       builder: (context, state) {
         AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
         return Form(
-          key: authCubit.signupFormKey,
+          key: authCubit.signinFormKey,
           child: Column(
             children: [
-              CustomTextFromField(
-                labelText: AppStrings.fristName,
-                onChanged: (firstName) {
-                  authCubit.firstName = firstName;
-                },
-              ),
-              CustomTextFromField(
-                labelText: AppStrings.lastName,
-                onChanged: (lastName) {
-                  authCubit.lastName = lastName;
-                },
-              ),
               CustomTextFromField(
                 labelText: AppStrings.emailAddress,
                 onChanged: (emailAdress) {
@@ -64,7 +52,6 @@ class CustomSignUpForm extends StatelessWidget {
                   authCubit.password = password;
                 },
               ),
-              const TermsAndConditionsWidget(),
               state is SignupLoadingState
                   ? const CircularProgressIndicator()
                   : Padding(
@@ -78,10 +65,8 @@ class CustomSignUpForm extends StatelessWidget {
                             : null,
                         onPressed: () {
                           if (authCubit.termsAndCondidtionCheckBox == true) {
-                            if (authCubit.signupFormKey.currentState!
-                                .validate()) {
-                              authCubit.signUpWithEmailAndPassword();
-                            }
+                            if (authCubit.signinFormKey.currentState!
+                                .validate()) {}
                           }
                         },
                         text: const Text(AppStrings.signUp),
