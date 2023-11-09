@@ -64,6 +64,8 @@ class AuthCubit extends Cubit<AuthState> {
         emit(SigninFailureState(
             errMessage: 'Wrong password provided for that user.'));
       }
+    } catch (e) {
+      emit(SigninFailureState(errMessage: e.toString()));
     }
   }
 }
