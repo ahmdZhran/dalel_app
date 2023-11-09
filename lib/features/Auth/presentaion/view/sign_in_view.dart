@@ -1,4 +1,5 @@
 import 'package:dalel_app/core/utls/app_strings.dart';
+import 'package:dalel_app/features/Auth/presentaion/widgets/custom_signin_form.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/welcom_panner_widget.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/welcom_text_widget.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,12 @@ class SignInView extends StatelessWidget {
           SliverToBoxAdapter(
             child: WelcomTextWidget(text: AppStrings.welcomeBack),
           ),
+          SliverToBoxAdapter(
+            child: Gap(20),
+          ),
+          SliverToBoxAdapter(
+            child: CustomSignInForm(),
+          )
         ],
       ),
     );

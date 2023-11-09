@@ -2,15 +2,18 @@ import 'package:dalel_app/core/functions/flutter_toast.dart';
 import 'package:dalel_app/core/functions/navigator_method.dart';
 import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:dalel_app/core/utls/app_strings.dart';
+
 import 'package:dalel_app/core/widgets/custom_button.dart';
 import 'package:dalel_app/features/Auth/presentaion/auth_cubit/cubit/auth_cubit.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/custom_text_form.dart';
+import 'package:dalel_app/features/Auth/presentaion/widgets/forget_password.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gap/gap.dart';
 
-class CustomSignUpForm extends StatelessWidget {
-  const CustomSignUpForm({super.key});
+class CustomSignInForm extends StatelessWidget {
+  const CustomSignInForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +55,9 @@ class CustomSignUpForm extends StatelessWidget {
                   authCubit.password = password;
                 },
               ),
+              const Gap(20),
+              const ForgetPasswordTextWidget(),
+              const Gap(80),
               state is SignupLoadingState
                   ? const CircularProgressIndicator()
                   : Padding(
@@ -60,18 +66,17 @@ class CustomSignUpForm extends StatelessWidget {
                         onTap: () {
                           customNavigate(context, '/signInView');
                         },
-                        color: authCubit.termsAndCondidtionCheckBox == false
-                            ? AppColors.grey
-                            : null,
+                        color: AppColors.primaryColor,
                         onPressed: () {
-                          if (authCubit.termsAndCondidtionCheckBox == true) {
-                            if (authCubit.signinFormKey.currentState!
-                                .validate()) {}
-                          }
+                          if (authCubit.signinFormKey.currentState!
+                              .validate()) {}
                         },
-                        text: const Text(AppStrings.signUp),
+                        text: Text(
+                          AppStrings.signIn,
+                          style: TextStyle(color: AppColors.offWhite),
+                        ),
                       ),
-                    )
+                    ),
             ],
           ),
         );
