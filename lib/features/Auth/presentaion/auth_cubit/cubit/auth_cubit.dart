@@ -8,7 +8,7 @@ class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
   String? firstName;
   String? lastName;
-  String? emailAdress;
+  String? emailAddress;
   String? password;
   bool? termsAndCondidtionCheckBox = false;
   bool obsecurePasswordText = true;
@@ -21,7 +21,7 @@ class AuthCubit extends Cubit<AuthState> {
       emit(SignupLoadingState());
 
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: emailAdress!,
+        email: emailAddress!,
         password: password!,
       );
       emit(SignupSuccessState());
@@ -47,5 +47,23 @@ class AuthCubit extends Cubit<AuthState> {
   void obsecurePassword() {
     obsecurePasswordText = !obsecurePasswordText;
     emit(ObsecurePassowrdTextState());
+  }
+
+  void signInWithEmailAndPassowrd() async {
+    try {
+      emit(SigninLoadingState());
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailAddress!,
+        password: password!,
+      );
+      emit(SigninSuccessState());
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        emit(SigninFailureState(errMessage: 'No user found for that email.'));
+      } else if (e.code == 'wrong-password') {
+        emit(SigninFailureState(
+            errMessage: 'Wrong password provided for that user.'));
+      }
+    }
   }
 }

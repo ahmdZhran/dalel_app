@@ -35,7 +35,7 @@ class CustomSignInForm extends StatelessWidget {
               CustomTextFromField(
                 labelText: AppStrings.emailAddress,
                 onChanged: (emailAdress) {
-                  authCubit.emailAdress = emailAdress;
+                  authCubit.emailAddress = emailAdress;
                 },
               ),
               CustomTextFromField(
