@@ -14,6 +14,8 @@ class AuthCubit extends Cubit<AuthState> {
   bool obsecurePasswordText = true;
 
   GlobalKey<FormState> signupFormKey = GlobalKey();
+
+  GlobalKey<FormState> signinFormKey = GlobalKey();
   signUpWithEmailAndPassword() async {
     try {
       emit(SignupLoadingState());
