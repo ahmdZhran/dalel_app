@@ -22,7 +22,9 @@ class _SplshViewState extends State<SplshView> {
     if (isBoardingVisited == true) {
       FirebaseAuth.instance.currentUser == null
           ? delayedNavigation(context, '/signInView')
-          : delayedNavigation(context, '/homeView');
+          : FirebaseAuth.instance.currentUser!.emailVerified == true
+              ? delayedNavigation(context, '/homeView')
+              : delayedNavigation(context, '/signInView');
     } else {
       delayedNavigation(context, '/onBoarding');
     }
