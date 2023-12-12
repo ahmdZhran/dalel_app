@@ -39,6 +39,10 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
+  void verifyEmai() async {
+    await FirebaseAuth.instance.currentUser!.sendEmailVerification();
+  }
+
   void updateTermsAndConditionsCheckBox({required newValue}) {
     termsAndCondidtionCheckBox = newValue;
     emit(TermsAndConditionsUpdateState());
