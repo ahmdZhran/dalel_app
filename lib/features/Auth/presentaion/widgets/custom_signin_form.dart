@@ -7,6 +7,7 @@ import 'package:dalel_app/core/widgets/custom_button.dart';
 import 'package:dalel_app/features/Auth/presentaion/auth_cubit/cubit/auth_cubit.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/custom_text_form.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/forget_password.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +22,9 @@ class CustomSignInForm extends StatelessWidget {
       listener: (context, state) {
         if (state is SigninSuccessState) {
           showToast('WlcomBack !');
-          customReplacementNavigate(context, '/homeView');
+          FirebaseAuth.instance.currentUser!.emailVerified
+              ? customReplacementNavigate(context, '/homeView')
+              : showToast('Please verify your email first');
         } else if (state is SigninFailureState) {
           showToast(state.errMessage);
         }
@@ -63,9 +66,6 @@ class CustomSignInForm extends StatelessWidget {
                   : Padding(
                       padding: const EdgeInsets.all(10),
                       child: CustomElevatedButton(
-                        onTap: () {
-                          customNavigate(context, '/signInView');
-                        },
                         color: AppColors.primaryColor,
                         onPressed: () {
                           if (authCubit.signinFormKey.currentState!
