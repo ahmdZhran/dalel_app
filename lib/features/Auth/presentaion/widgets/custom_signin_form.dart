@@ -20,8 +20,8 @@ class CustomSignInForm extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is SigninSuccessState) {
-          showToast('WlcomBack !');
-          customReplacementNavigate(context, '/homeView');
+          showToast('Done , check your email to verify your account');
+          customReplacementNavigate(context, '/signInView');
         } else if (state is SigninFailureState) {
           showToast(state.errMessage);
         }
