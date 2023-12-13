@@ -29,9 +29,9 @@ final class SigninFailureState extends AuthState {
   SigninFailureState({required this.errMessage});
 }
 
-final class ResetPasswordSuccessState extends AuthState {}
-
 final class ResetPasswwordLoadingState extends AuthState {}
+
+final class ResetPasswordSuccessState extends AuthState {}
 
 final class ResetPasswwordFailerState extends AuthState {
   final String errMessage;

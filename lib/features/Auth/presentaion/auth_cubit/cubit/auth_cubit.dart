@@ -16,6 +16,7 @@ class AuthCubit extends Cubit<AuthState> {
   GlobalKey<FormState> signupFormKey = GlobalKey();
 
   GlobalKey<FormState> signinFormKey = GlobalKey();
+  GlobalKey<FormState> forgotPasswordFormKey = GlobalKey();
   signUpWithEmailAndPassword() async {
     try {
       emit(SignupLoadingState());
@@ -80,5 +81,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  resetPasswordWithEmailLink() {}
+  resetPasswordWithEmailLink() {
+    FirebaseAuth.instance.sendPasswordResetEmail(email: emailAddress!);
+  }
 }
