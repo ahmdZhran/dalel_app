@@ -21,7 +21,8 @@ abstract class AppStrings {
       alreadyHaveAnAccount = "Already have an account ? ",
       dontHaveAnAccount = "Don’t have an account ? ",
       forgotPassword = "Forgot Password ?",
-      enterYourRegisterEmailBelow = "Enter your register Email below",
+      enterYourRegisterEmailBelow =
+          "Enter your register Email below to can reset your password",
       //!Home Strings
       recommendations = "Recommendations",
       aboutAncientEgypt = "About Ancient Egypt",

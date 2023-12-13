@@ -1,4 +1,5 @@
-import 'package:dalel_app/core/utls/app_assets.dart';
+import 'package:dalel_app/core/utls/app_strings.dart';
+import 'package:dalel_app/features/Auth/presentaion/widgets/cusotm_tilte_of_forgot_password.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/custom_forogot_password_text.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/custom_image_forgot_password.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,14 @@ class CustomForogtPasswordView extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: ForgotPasswordImage(),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 50,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: ForgotPasswordTitles(),
           )
         ],
       ),
