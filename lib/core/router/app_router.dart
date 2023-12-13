@@ -1,5 +1,6 @@
 import 'package:dalel_app/features/Auth/presentaion/auth_cubit/cubit/auth_cubit.dart';
 import 'package:dalel_app/features/Auth/presentaion/view/sign_in_view.dart';
+import 'package:dalel_app/features/Auth/presentaion/widgets/custom_forgot_password.dart';
 import 'package:dalel_app/features/home/data/presentation/views/home_view.dart';
 import 'package:dalel_app/features/on_boarding/presentaion/view/on_bording_view.dart';
 import 'package:dalel_app/features/splash/presentaion/view/splsh_view.dart';
@@ -39,6 +40,9 @@ final GoRouter router = GoRouter(
         child: const HomeView(),
       ),
     ),
-    GoRoute(path: '/forgotPassword',builder: (context, state) => ,)
+    GoRoute(
+      path: '/forgotPassword',
+      builder: (context, state) => const CustomForogtPassword(),
+    )
   ],
 );
