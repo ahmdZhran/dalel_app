@@ -59,7 +59,7 @@ class CustomSignInForm extends StatelessWidget {
                 },
               ),
               const Gap(20),
-              ForgetPasswordTextWidget(
+              ForgotPasswordTextWidget(
                 onTap: () {
                   customNavigate(context, '/forgotPassword');
                 },

@@ -42,7 +42,7 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(
       path: '/forgotPassword',
-      builder: (context, state) => const CustomForogtPassword(),
+      builder: (context, state) => const CustomForogtPasswordView(),
     )
   ],
 );

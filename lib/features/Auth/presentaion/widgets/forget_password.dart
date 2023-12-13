@@ -3,8 +3,8 @@ import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
 import 'package:flutter/material.dart';
 
-class ForgetPasswordTextWidget extends StatelessWidget {
-  const ForgetPasswordTextWidget({super.key, this.onTap});
+class ForgotPasswordTextWidget extends StatelessWidget {
+  const ForgotPasswordTextWidget({super.key, this.onTap});
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
