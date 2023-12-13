@@ -79,4 +79,6 @@ class AuthCubit extends Cubit<AuthState> {
       emit(SigninFailureState(errMessage: e.toString()));
     }
   }
+
+  resetPasswordWithEmailLink() {}
 }

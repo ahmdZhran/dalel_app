@@ -28,7 +28,7 @@ class CustomForogotPasswordForm extends StatelessWidget {
                   authCubit.emailAddress = emailAdress;
                 },
               ),
-              const Gap(20),
+              const Gap(176),
               state is SignInLoadingState
                   ? const CircularProgressIndicator()
                   : Padding(
@@ -42,7 +42,7 @@ class CustomForogotPasswordForm extends StatelessWidget {
                           }
                         },
                         text: Text(
-                          AppStrings.signIn,
+                          AppStrings.sendResetPasswordLink,
                           style: TextStyle(color: AppColors.offWhite),
                         ),
                       ),
