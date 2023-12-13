@@ -4,8 +4,8 @@ import 'package:dalel_app/core/utls/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPasswordTextWidget extends StatelessWidget {
-  const ForgetPasswordTextWidget({super.key});
-
+  const ForgetPasswordTextWidget({super.key, this.onTap});
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,9 +16,12 @@ class ForgetPasswordTextWidget extends StatelessWidget {
         },
         child: Align(
           alignment: Alignment.centerRight,
-          child: Text(
-            AppStrings.forgotPassword,
-            style: CustomTextStyles.poppins600style28.copyWith(fontSize: 12),
+          child: GestureDetector(
+            onTap: onTap,
+            child: Text(
+              AppStrings.forgotPassword,
+              style: CustomTextStyles.poppins600style28.copyWith(fontSize: 12),
+            ),
           ),
         ),
       ),
