@@ -39,5 +39,6 @@ final GoRouter router = GoRouter(
         child: const HomeView(),
       ),
     ),
+    GoRoute(path: '/forgotPassword',builder: (context, state) => ,)
   ],
 );
