@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -89,5 +90,14 @@ class AuthCubit extends Cubit<AuthState> {
     } on Exception catch (e) {
       emit(ResetPasswwordFailerState(errMessage: e.toString()));
     }
+  }
+
+  addUserProfile() {
+    CollectionReference users = FirebaseFirestore.instance.collection('users');
+    users.add({
+      "first_name": firstName,
+      "last_name": lastName,
+      "email": emailAddress,
+    });
   }
 }
