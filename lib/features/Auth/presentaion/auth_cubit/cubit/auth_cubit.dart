@@ -92,9 +92,9 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  addUserProfile() {
+  addUserProfile() async {
     CollectionReference users = FirebaseFirestore.instance.collection('users');
-    users.add({
+    await users.add({
       "first_name": firstName,
       "last_name": lastName,
       "email": emailAddress,
