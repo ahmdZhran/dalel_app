@@ -1,3 +1,5 @@
+import 'package:dalel_app/core/functions/flutter_toast.dart';
+import 'package:dalel_app/core/functions/navigator_method.dart';
 import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:dalel_app/core/utls/app_strings.dart';
 
@@ -15,11 +17,18 @@ class CustomForogotPasswordForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is ResetPasswordSuccessState) {
+          showToast('Check you box to reset your new password');
+          customReplacementNavigate(context, '/signInView');
+        } else if (state is ResetPasswwordFailerState) {
+          showToast(state.errMessage);
+        }
+      },
       builder: (context, state) {
         AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
         return Form(
-          key: authCubit.signinFormKey,
+          key: authCubit.forgotPasswordFormKey,
           child: Column(
             children: [
               CustomTextFromField(
@@ -36,9 +45,9 @@ class CustomForogotPasswordForm extends StatelessWidget {
                       child: CustomElevatedButton(
                         color: AppColors.primaryColor,
                         onPressed: () {
-                          if (authCubit.signinFormKey.currentState!
+                          if (authCubit.forgotPasswordFormKey.currentState!
                               .validate()) {
-                            authCubit.signInWithEmailAndPassowrd();
+                            authCubit.resetPasswordWithEmailLink();
                           }
                         },
                         text: Text(

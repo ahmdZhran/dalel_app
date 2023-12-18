@@ -3,7 +3,6 @@ import 'package:dalel_app/features/Auth/presentaion/widgets/cusotm_tilte_of_forg
 import 'package:dalel_app/features/Auth/presentaion/widgets/custom_forogot_password_text.dart';
 import 'package:dalel_app/features/Auth/presentaion/widgets/custom_image_forgot_password.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 class CustomForogtPasswordView extends StatelessWidget {
   const CustomForogtPasswordView({super.key});
