@@ -26,4 +26,6 @@ class Assets {
   static const String imagePersonActive = "assets/image/person-active.svg";
   static const String imageVector = "assets/image/vector1.svg";
   static const String imageVector2 = "assets/image/vector2.svg";
-}
+  //assets for navigation bar
+  static const String homeActive = "assets/image/home_active.svg";
+  static const String home = "assets/image/home.svg";
