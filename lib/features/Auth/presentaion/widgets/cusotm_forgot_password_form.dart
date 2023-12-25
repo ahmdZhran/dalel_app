@@ -38,7 +38,7 @@ class CustomForogotPasswordForm extends StatelessWidget {
                 },
               ),
               const Gap(176),
-              state is SignInLoadingState
+              state is ResetPasswwordLoadingState
                   ? const CircularProgressIndicator()
                   : Padding(
                       padding: const EdgeInsets.all(10),

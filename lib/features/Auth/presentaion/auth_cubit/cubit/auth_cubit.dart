@@ -18,7 +18,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   GlobalKey<FormState> signinFormKey = GlobalKey();
   GlobalKey<FormState> forgotPasswordFormKey = GlobalKey();
-  signUpWithEmailAndPassword() async {
+  Future<void> signUpWithEmailAndPassword() async {
     try {
       emit(SignupLoadingState());
 
@@ -27,23 +27,27 @@ class AuthCubit extends Cubit<AuthState> {
         password: password!,
       );
       await addUserProfile();
-      verifyEmai();
+      await verifyEmai();
       emit(SignupSuccessState());
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        emit(SignupFailureState(
-            errMessage: 'The password provided is too weak.'));
-      } else if (e.code == 'email-already-in-use') {
-        emit(SignupFailureState(
-            errMessage: 'The account already exists for that email.'));
-      }
+      _signUpHandleExceptions(e);
     } catch (e) {
       print(e.toString());
       emit(SignupFailureState(errMessage: e.toString()));
     }
   }
 
-  void verifyEmai() async {
+  void _signUpHandleExceptions(FirebaseAuthException e) {
+    if (e.code == 'weak-password') {
+      emit(
+          SignupFailureState(errMessage: 'The password provided is too weak.'));
+    } else if (e.code == 'email-already-in-use') {
+      emit(SignupFailureState(
+          errMessage: 'The account already exists for that email.'));
+    }
+  }
+
+  Future<void> verifyEmai() async {
     await FirebaseAuth.instance.currentUser!.sendEmailVerification();
   }
 
@@ -57,7 +61,7 @@ class AuthCubit extends Cubit<AuthState> {
     emit(ObsecurePassowrdTextState());
   }
 
-  void signInWithEmailAndPassowrd() async {
+  Future<void> signInWithEmailAndPassowrd() async {
     try {
       emit(SignInLoadingState());
       await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -83,7 +87,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  resetPasswordWithEmailLink() async {
+  Future<void> resetPasswordWithEmailLink() async {
     emit(ResetPasswwordLoadingState());
     try {
       emit(ResetPasswordSuccessState());
@@ -93,7 +97,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  addUserProfile() async {
+  Future<void> addUserProfile() async {
     CollectionReference users = FirebaseFirestore.instance.collection('users');
     await users.add({
       "first_name": firstName,

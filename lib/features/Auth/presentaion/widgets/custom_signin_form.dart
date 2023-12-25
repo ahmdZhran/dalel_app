@@ -71,10 +71,10 @@ class CustomSignInForm extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       child: CustomElevatedButton(
                         color: AppColors.primaryColor,
-                        onPressed: () {
+                        onPressed: () async {
                           if (authCubit.signinFormKey.currentState!
                               .validate()) {
-                            authCubit.signInWithEmailAndPassowrd();
+                            await authCubit.signInWithEmailAndPassowrd();
                           }
                         },
                         text: Text(
