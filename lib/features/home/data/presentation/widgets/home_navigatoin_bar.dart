@@ -68,13 +68,14 @@ List<PersistentBottomNavBarItem> _navBarsItems() {
           colorFilter: ColorFilter.mode(AppColors.black, BlendMode.srcIn),
         )),
     PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(
-          Assets.userActive,
-          colorFilter: ColorFilter.mode(AppColors.black, BlendMode.srcIn),
-        ),
-        inactiveIcon: SvgPicture.asset(
-          Assets.user,
-          colorFilter: ColorFilter.mode(AppColors.black, BlendMode.srcIn),
-        )),
+      icon: SvgPicture.asset(
+        Assets.userActive,
+        colorFilter: ColorFilter.mode(AppColors.black, BlendMode.srcIn),
+      ),
+      inactiveIcon: SvgPicture.asset(
+        Assets.user,
+        colorFilter: ColorFilter.mode(AppColors.black, BlendMode.srcIn),
+      ),
+    ),
   ];
 }
