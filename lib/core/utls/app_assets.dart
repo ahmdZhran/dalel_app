@@ -29,4 +29,10 @@ class Assets {
   //assets for navigation bar
   static const String homeActive = "assets/image/home_active.svg";
   static const String home = "assets/image/home.svg";
+  static const String cart = "assets/image/cart.svg";
+  static const String cartActive = "assets/image/cart_active.svg";
+  static const String user = "assets/image/user.svg";
+  static const String userActive = "assets/image/user_active.svg";
+  static const String search = "assets/image/search.svg";
+  static const String searchActive = "assets/image/search_active.svg";
 }

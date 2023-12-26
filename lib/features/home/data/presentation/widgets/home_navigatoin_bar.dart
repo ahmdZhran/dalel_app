@@ -1,4 +1,5 @@
 import 'package:dalel_app/core/utls/app_assets.dart';
+import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:dalel_app/features/cart/presentation/view/cart_view.dart';
 import 'package:dalel_app/features/home/data/presentation/views/home_view.dart';
 import 'package:dalel_app/features/profile/presentation/views/profile_view.dart';
@@ -18,6 +19,15 @@ class HomeNavBarWidget extends StatelessWidget {
       context,
       screens: _buildScreens(),
       controller: _controller,
+      items: _navBarsItems(),
+      navBarStyle: NavBarStyle.style13,
+      backgroundColor: AppColors.primaryColor,
+      decoration: const NavBarDecoration(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(50),
+              topRight: Radius.circular(50),
+              bottomLeft: Radius.circular(12),
+              bottomRight: Radius.circular(12))),
     );
   }
 }
@@ -34,7 +44,37 @@ List<Widget> _buildScreens() {
 List<PersistentBottomNavBarItem> _navBarsItems() {
   return [
     PersistentBottomNavBarItem(
-      icon: SvgPicture.asset(Assets.home),
-    )
+      icon: SvgPicture.asset(
+        Assets.homeActive,
+        colorFilter: ColorFilter.mode(AppColors.black, BlendMode.srcIn),
+      ),
+      inactiveIcon: SvgPicture.asset(Assets.home),
+    ),
+    PersistentBottomNavBarItem(
+        icon: SvgPicture.asset(
+          Assets.cartActive,
+          colorFilter: ColorFilter.mode(AppColors.black, BlendMode.srcIn),
+        ),
+        inactiveIcon: SvgPicture.asset(
+          Assets.cart,
+          colorFilter: ColorFilter.mode(AppColors.black, BlendMode.srcIn),
+        )),
+    PersistentBottomNavBarItem(
+        icon: SvgPicture.asset(
+          Assets.searchActive,
+        ),
+        inactiveIcon: SvgPicture.asset(
+          Assets.search,
+          colorFilter: ColorFilter.mode(AppColors.black, BlendMode.srcIn),
+        )),
+    PersistentBottomNavBarItem(
+        icon: SvgPicture.asset(
+          Assets.userActive,
+          colorFilter: ColorFilter.mode(AppColors.black, BlendMode.srcIn),
+        ),
+        inactiveIcon: SvgPicture.asset(
+          Assets.user,
+          colorFilter: ColorFilter.mode(AppColors.black, BlendMode.srcIn),
+        )),
   ];
 }
