@@ -29,3 +29,4 @@ class Assets {
   //assets for navigation bar
   static const String homeActive = "assets/image/home_active.svg";
   static const String home = "assets/image/home.svg";
+}

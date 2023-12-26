@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:dalel_app/core/utls/app_assets.dart';
 import 'package:dalel_app/features/cart/presentation/view/cart_view.dart';
 import 'package:dalel_app/features/home/data/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,9 @@ List<Widget> _buildScreens() {
 
 List<PersistentBottomNavBarItem> _navBarsItems() {
   return [
-    PersistentBottomNavBarItem(icon: SvgPicture.asset(Appas))
-  ]
+    PersistentBottomNavBarItem(
+      icon: SvgPicture.asset(Assets.home),
+      
+    )
+  ];
 }
