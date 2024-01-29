@@ -9,11 +9,13 @@ class CustomCardItem extends StatelessWidget {
       required this.widthofCard,
       required this.heightofImage,
       required this.widthOfImage,
-      required this.image});
+      required this.image,
+      required this.text});
   final double heightOfCard;
   final double widthofCard;
   final double heightofImage;
   final double widthOfImage;
+  final String text;
   final ImageProvider<Object> image;
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,7 @@ class CustomCardItem extends StatelessWidget {
             ),
           ),
           Text(
-            'Saladine',
+            text,
             style: CustomTextStyles.poppins500style18.copyWith(
               color: AppColors.deepBrown,
               fontSize: 14,

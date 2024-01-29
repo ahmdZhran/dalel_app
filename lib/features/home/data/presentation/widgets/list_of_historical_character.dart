@@ -17,6 +17,7 @@ class ListOfHistoricalCharacter extends StatelessWidget {
           return const Padding(
             padding: EdgeInsets.all(8.0),
             child: CustomCardItem(
+              text: 'Saladine',
               heightOfCard: 120,
               widthofCard: 110,
               heightofImage: 180,
