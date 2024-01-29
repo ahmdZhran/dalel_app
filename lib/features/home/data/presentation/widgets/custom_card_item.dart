@@ -40,16 +40,19 @@ class CustomCardItem extends StatelessWidget {
             width: widthOfImage,
             decoration: BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.fitHeight,
+                fit: BoxFit.fitWidth,
                 image: image,
               ),
             ),
           ),
-          Text(
-            text,
-            style: CustomTextStyles.poppins500style18.copyWith(
-              color: AppColors.deepBrown,
-              fontSize: 14,
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text(
+              text,
+              style: CustomTextStyles.poppins500style18.copyWith(
+                color: AppColors.deepBrown,
+                fontSize: 14,
+              ),
             ),
           ),
         ],

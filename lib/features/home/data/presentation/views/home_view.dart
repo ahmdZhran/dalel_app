@@ -3,6 +3,7 @@ import 'package:dalel_app/core/widgets/custom_header_text.dart';
 import 'package:dalel_app/features/home/data/presentation/widgets/custom_app_bar.dart';
 import 'package:dalel_app/features/home/data/presentation/widgets/historical_period_item.dart';
 import 'package:dalel_app/features/home/data/presentation/widgets/list_of_historical_character.dart';
+import 'package:dalel_app/features/home/data/presentation/widgets/list_of_historical_souvenirs.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -31,9 +32,11 @@ class HomeView extends StatelessWidget {
             SliverToBoxAdapter(child: ListOfHistoricalCharacter()),
             SliverToBoxAdapter(child: SizedBox(height: 20)),
             SliverToBoxAdapter(
-                child: CustomHeaderText(
-              text: AppStrings.historicalSouvenirs,
-            ))
+              child: CustomHeaderText(
+                text: AppStrings.historicalSouvenirs,
+              ),
+            ),
+            SliverToBoxAdapter(child: ListOfHistoricalSouvenirs())
           ],
         ),
       )),
