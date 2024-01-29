@@ -1,7 +1,4 @@
-import 'package:dalel_app/core/utls/app_assets.dart';
-import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:dalel_app/core/utls/app_strings.dart';
-import 'package:dalel_app/core/utls/text_styles.dart';
 import 'package:dalel_app/core/widgets/custom_header_text.dart';
 import 'package:dalel_app/features/home/data/presentation/widgets/custom_app_bar.dart';
 import 'package:dalel_app/features/home/data/presentation/widgets/historical_period_item.dart';
