@@ -1,4 +1,7 @@
+import 'package:dalel_app/core/utls/app_strings.dart';
+import 'package:dalel_app/core/widgets/custom_header_text.dart';
 import 'package:dalel_app/features/home/data/presentation/widgets/custom_app_bar.dart';
+import 'package:dalel_app/features/home/data/presentation/widgets/historical_period_item.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -8,12 +11,20 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
-          body: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: CustomAppBar(),
-          )
-        ],
+          body: Padding(
+        padding: EdgeInsets.all(12),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: CustomAppBar(),
+            ),
+            SliverToBoxAdapter(
+              child: CustomHeaderText(text: AppStrings.historicalPeriods),
+            ),
+            SliverToBoxAdapter(child: SizedBox(height: 28)),
+            SliverToBoxAdapter(child: HistoricalPeriod()),
+          ],
+        ),
       )),
     );
   }
