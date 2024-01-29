@@ -1,16 +1,25 @@
-import 'package:dalel_app/core/utls/app_assets.dart';
 import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
 import 'package:flutter/material.dart';
 
-class CharacterItme extends StatelessWidget {
-  const CharacterItme({super.key});
-
+class CustomCardItem extends StatelessWidget {
+  const CustomCardItem(
+      {super.key,
+      required this.heightOfCard,
+      required this.widthofCard,
+      required this.heightofImage,
+      required this.widthOfImage,
+      required this.image});
+  final double heightOfCard;
+  final double widthofCard;
+  final double heightofImage;
+  final double widthOfImage;
+  final ImageProvider<Object> image;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
-      width: 110,
+      height: heightOfCard,
+      width: widthofCard,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadiusDirectional.circular(12),
@@ -25,12 +34,12 @@ class CharacterItme extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 180,
-            width: 200,
-            decoration: const BoxDecoration(
+            height: heightofImage,
+            width: widthOfImage,
+            decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fitHeight,
-                image: AssetImage(Assets.imageFrame),
+                image: image,
               ),
             ),
           ),

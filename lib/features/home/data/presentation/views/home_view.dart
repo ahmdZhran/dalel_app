@@ -28,7 +28,12 @@ class HomeView extends StatelessWidget {
             SliverToBoxAdapter(
               child: CustomHeaderText(text: AppStrings.historicalCharacters),
             ),
-            SliverToBoxAdapter(child: ListOfHistoricalCharacter())
+            SliverToBoxAdapter(child: ListOfHistoricalCharacter()),
+            SliverToBoxAdapter(child: SizedBox(height: 20)),
+            SliverToBoxAdapter(
+                child: CustomHeaderText(
+              text: AppStrings.historicalSouvenirs,
+            ))
           ],
         ),
       )),
