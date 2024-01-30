@@ -1,4 +1,4 @@
-import 'package:dalel_app/core/utls/text_styles.dart';
+import '../utls/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomHeaderText extends StatelessWidget {

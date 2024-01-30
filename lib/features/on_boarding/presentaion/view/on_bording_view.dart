@@ -1,8 +1,8 @@
-import 'package:dalel_app/core/functions/navigator_method.dart';
-import 'package:dalel_app/features/on_boarding/functions/on_boarding.dart';
-import 'package:dalel_app/features/on_boarding/presentaion/widgets/custom_nav_bar.dart';
-import 'package:dalel_app/features/on_boarding/presentaion/widgets/get_buttons.dart';
-import 'package:dalel_app/features/on_boarding/presentaion/widgets/on_boarding_widget.dart';
+import '../../../../core/functions/navigator_method.dart';
+import '../../functions/on_boarding.dart';
+import '../widgets/custom_nav_bar.dart';
+import '../widgets/get_buttons.dart';
+import '../widgets/on_boarding_widget.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingView extends StatefulWidget {

@@ -1,6 +1,7 @@
-import 'package:dalel_app/core/utls/text_styles.dart';
-import 'package:dalel_app/features/on_boarding/data/on_boarding_model.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/utls/text_styles.dart';
+import '../../data/on_boarding_model.dart';
 
 class OnBoardingWidgetBody extends StatelessWidget {
   const OnBoardingWidgetBody(

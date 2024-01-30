@@ -1,6 +1,7 @@
-import 'package:dalel_app/core/utls/app_assets.dart';
-import 'package:dalel_app/features/home/data/presentation/widgets/custom_card_item.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/utls/app_assets.dart';
+import 'custom_card_item.dart';
 
 class ListOfHistoricalSouvenirs extends StatelessWidget {
   const ListOfHistoricalSouvenirs({super.key});

@@ -1,7 +1,7 @@
-import 'package:dalel_app/features/home/data/presentation/views/home_sections/app_bar_section.dart';
-import 'package:dalel_app/features/home/data/presentation/views/home_sections/historical_character_section.dart';
-import 'package:dalel_app/features/home/data/presentation/views/home_sections/historical_period_section.dart';
-import 'package:dalel_app/features/home/data/presentation/views/home_sections/historical_souviners_section.dart';
+import 'home_sections/app_bar_section.dart';
+import 'home_sections/historical_character_section.dart';
+import 'home_sections/historical_period_section.dart';
+import 'home_sections/historical_souviners_section.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {

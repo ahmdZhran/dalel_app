@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:dalel_app/core/utls/app_assets.dart';
-import 'package:dalel_app/core/utls/app_color.dart';
-import 'package:dalel_app/core/utls/text_styles.dart';
+import '../../../../../core/utls/app_assets.dart';
+import '../../../../../core/utls/app_color.dart';
+import '../../../../../core/utls/text_styles.dart';
 
 class HistoricalPeriod extends StatelessWidget {
   const HistoricalPeriod({Key? key}) : super(key: key);

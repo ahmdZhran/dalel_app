@@ -1,4 +1,4 @@
-import 'package:dalel_app/core/utls/app_assets.dart';
+import '../../../core/utls/app_assets.dart';
 
 class OnBoardingModel {
   final String imagePath;

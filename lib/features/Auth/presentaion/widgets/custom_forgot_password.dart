@@ -1,8 +1,9 @@
-import 'package:dalel_app/features/Auth/presentaion/widgets/cusotm_forgot_password_form.dart';
-import 'package:dalel_app/features/Auth/presentaion/widgets/cusotm_tilte_of_forgot_password.dart';
-import 'package:dalel_app/features/Auth/presentaion/widgets/custom_forogot_password_text.dart';
-import 'package:dalel_app/features/Auth/presentaion/widgets/custom_image_forgot_password.dart';
 import 'package:flutter/material.dart';
+
+import 'cusotm_forgot_password_form.dart';
+import 'cusotm_tilte_of_forgot_password.dart';
+import 'custom_forogot_password_text.dart';
+import 'custom_image_forgot_password.dart';
 
 class CustomForogtPasswordView extends StatelessWidget {
   const CustomForogtPasswordView({super.key});

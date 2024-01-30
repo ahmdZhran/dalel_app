@@ -1,9 +1,9 @@
-import 'package:dalel_app/core/functions/navigator_method.dart';
-import 'package:dalel_app/core/utls/app_strings.dart';
-import 'package:dalel_app/core/utls/text_styles.dart';
-import 'package:dalel_app/core/widgets/custom_button.dart';
-import 'package:dalel_app/features/on_boarding/data/on_boarding_model.dart';
-import 'package:dalel_app/features/on_boarding/functions/on_boarding.dart';
+import '../../../../core/functions/navigator_method.dart';
+import '../../../../core/utls/app_strings.dart';
+import '../../../../core/utls/text_styles.dart';
+import '../../../../core/widgets/custom_button.dart';
+import '../../data/on_boarding_model.dart';
+import '../../functions/on_boarding.dart';
 import 'package:flutter/material.dart';
 
 class GetButtons extends StatelessWidget {

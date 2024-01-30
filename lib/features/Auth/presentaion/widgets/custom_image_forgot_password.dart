@@ -1,5 +1,6 @@
-import 'package:dalel_app/core/utls/app_assets.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/utls/app_assets.dart';
 
 class ForgotPasswordImage extends StatelessWidget {
   const ForgotPasswordImage({super.key});
