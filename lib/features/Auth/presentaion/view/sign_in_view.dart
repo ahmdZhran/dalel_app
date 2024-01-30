@@ -1,9 +1,9 @@
-import 'package:dalel_app/core/functions/navigator_method.dart';
-import 'package:dalel_app/core/utls/app_strings.dart';
-import 'package:dalel_app/features/Auth/presentaion/widgets/custom_signin_form.dart';
-import 'package:dalel_app/features/Auth/presentaion/widgets/have_an_account_widget.dart';
-import 'package:dalel_app/features/Auth/presentaion/widgets/welcom_panner_widget.dart';
-import 'package:dalel_app/features/Auth/presentaion/widgets/welcom_text_widget.dart';
+import '../../../../core/functions/navigator_method.dart';
+import '../../../../core/utls/app_strings.dart';
+import '../widgets/custom_signin_form.dart';
+import '../widgets/have_an_account_widget.dart';
+import '../widgets/welcom_panner_widget.dart';
+import '../widgets/welcom_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

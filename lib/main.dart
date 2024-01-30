@@ -1,8 +1,8 @@
-import 'package:dalel_app/app/dalel_app.dart';
-import 'package:dalel_app/core/Services/service_locator.dart';
-import 'package:dalel_app/core/database/cach/cash_helper.dart';
-import 'package:dalel_app/core/functions/check_state_changes.dart';
-import 'package:dalel_app/firebase_options.dart';
+import 'app/dalel_app.dart';
+import 'core/Services/service_locator.dart';
+import 'core/database/cach/cash_helper.dart';
+import 'core/functions/check_state_changes.dart';
+import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 

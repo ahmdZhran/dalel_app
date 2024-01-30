@@ -1,7 +1,8 @@
-import 'package:dalel_app/core/utls/app_strings.dart';
-import 'package:dalel_app/core/utls/text_styles.dart';
-import 'package:dalel_app/features/Auth/presentaion/widgets/custom_check_box.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/utls/app_strings.dart';
+import '../../../../core/utls/text_styles.dart';
+import 'custom_check_box.dart';
 
 class TermsAndConditionsWidget extends StatelessWidget {
   const TermsAndConditionsWidget({super.key});

@@ -1,5 +1,6 @@
-import 'package:dalel_app/core/utls/app_strings.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/utls/app_strings.dart';
 
 class ForgotPasswordTitles extends StatelessWidget {
   const ForgotPasswordTitles({super.key});

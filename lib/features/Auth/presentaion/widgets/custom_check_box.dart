@@ -1,6 +1,7 @@
-import 'package:dalel_app/features/Auth/presentaion/auth_cubit/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../auth_cubit/cubit/auth_cubit.dart';
 
 class CustomCheckBoxWidget extends StatefulWidget {
   const CustomCheckBoxWidget({super.key});

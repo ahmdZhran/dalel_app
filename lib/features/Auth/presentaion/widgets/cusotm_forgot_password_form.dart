@@ -1,11 +1,11 @@
-import 'package:dalel_app/core/functions/flutter_toast.dart';
-import 'package:dalel_app/core/functions/navigator_method.dart';
-import 'package:dalel_app/core/utls/app_color.dart';
-import 'package:dalel_app/core/utls/app_strings.dart';
+import '../../../../core/functions/flutter_toast.dart';
+import '../../../../core/functions/navigator_method.dart';
+import '../../../../core/utls/app_color.dart';
+import '../../../../core/utls/app_strings.dart';
 
-import 'package:dalel_app/core/widgets/custom_button.dart';
-import 'package:dalel_app/features/Auth/presentaion/auth_cubit/cubit/auth_cubit.dart';
-import 'package:dalel_app/features/Auth/presentaion/widgets/custom_text_form.dart';
+import '../../../../core/widgets/custom_button.dart';
+import '../auth_cubit/cubit/auth_cubit.dart';
+import 'custom_text_form.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

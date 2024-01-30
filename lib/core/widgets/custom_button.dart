@@ -1,5 +1,6 @@
-import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:flutter/material.dart';
+
+import '../utls/app_color.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton(

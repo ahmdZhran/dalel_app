@@ -1,8 +1,8 @@
-import 'package:dalel_app/core/Services/service_locator.dart';
-import 'package:dalel_app/core/database/cach/cash_helper.dart';
-import 'package:dalel_app/core/functions/navigator_method.dart';
-import 'package:dalel_app/core/utls/app_strings.dart';
-import 'package:dalel_app/core/utls/text_styles.dart';
+import '../../../../core/Services/service_locator.dart';
+import '../../../../core/database/cach/cash_helper.dart';
+import '../../../../core/functions/navigator_method.dart';
+import '../../../../core/utls/app_strings.dart';
+import '../../../../core/utls/text_styles.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';

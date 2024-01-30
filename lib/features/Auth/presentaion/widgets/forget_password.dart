@@ -1,7 +1,8 @@
-import 'package:dalel_app/core/functions/navigator_method.dart';
-import 'package:dalel_app/core/utls/app_strings.dart';
-import 'package:dalel_app/core/utls/text_styles.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/functions/navigator_method.dart';
+import '../../../../core/utls/app_strings.dart';
+import '../../../../core/utls/text_styles.dart';
 
 class ForgotPasswordTextWidget extends StatelessWidget {
   const ForgotPasswordTextWidget({super.key, this.onTap});
