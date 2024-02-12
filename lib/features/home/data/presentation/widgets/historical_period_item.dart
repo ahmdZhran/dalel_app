@@ -3,6 +3,8 @@ import 'package:dalel_app/features/home/data/models/historical_period_model.dart
 import 'package:dalel_app/features/home/data/presentation/widgets/historical_period_card.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/widgets/custom_shimmer_category.dart';
+
 class HistoricalPeriod extends StatelessWidget {
   const HistoricalPeriod({Key? key}) : super(key: key);
 
@@ -42,7 +44,7 @@ class HistoricalPeriod extends StatelessWidget {
           );
         }
 
-        return const Text("loading");
+        return const CustomShimmerCategory();
       },
     );
   }
