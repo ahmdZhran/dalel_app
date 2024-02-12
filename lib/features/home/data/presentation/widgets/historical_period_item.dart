@@ -1,50 +1,49 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dalel_app/features/home/data/models/historical_period_model.dart';
-import 'package:dalel_app/features/home/data/presentation/widgets/historical_period_card.dart';
+import 'package:dalel_app/core/functions/flutter_toast.dart';
+import 'package:dalel_app/features/home/data/presentation/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/widgets/custom_shimmer_category.dart';
+import 'historical_period_card.dart';
 
 class HistoricalPeriod extends StatelessWidget {
   const HistoricalPeriod({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<QuerySnapshot>(
-      future: FirebaseFirestore.instance.collection('historical_period').get(),
-      builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          return const Text("Something went wrong");
+    // BlocConsumer listens to state changes in HomeCubit
+    return BlocConsumer<HomeCubit, HomeState>(
+      listener: (context, state) {
+        // If state is GetHistoricalPeriodFailer, show toast with error message
+        if (state is GetHistoricalPeriodFailer) {
+          showToast(state.errMessage);
         }
-
-        if (snapshot.hasData && !snapshot.data!.docs[0].exists) {
-          return const Text("Document does not exist");
-        }
-
-        if (snapshot.connectionState == ConnectionState.done) {
-          List<HistoricalPeriodsModel> historicalPeriods = [];
-          for (int i = 0; i < snapshot.data!.docs.length; i++) {
-            historicalPeriods
-                .add(HistoricalPeriodsModel.fromJason(snapshot.data!.docs[i]));
-          }
-          return SizedBox(
-            height: 96,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return HistoricalPeriodItem(
-                  historicalPeriodsModel: historicalPeriods[index],
-                );
-              },
-              separatorBuilder: (context, index) {
-                return const SizedBox(width: 20);
-              },
-              itemCount: snapshot.data!.docs.length,
-            ),
-          );
-        }
-
-        return const CustomShimmerCategory();
+      },
+      builder: (context, state) {
+        // If state is GetHistoricalPeriodLoading, show shimmer effect
+        // Otherwise, display historical period items
+        return state is GetHistoricalPeriodLoading
+            ? const CustomShimmerCategory() // CustomShimmerCategory shows a shimmer effect
+            : SizedBox(
+                height: 96,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    // Display HistoricalPeriodItem for each historical period model
+                    return HistoricalPeriodItem(
+                      historicalPeriodsModel: context
+                          .read<HomeCubit>()
+                          .historicalPeriodModels[index],
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    // Add spacing between HistoricalPeriodItems
+                    return const SizedBox(width: 20);
+                  },
+                  itemCount:
+                      context.read<HomeCubit>().historicalPeriodModels.length,
+                ),
+              );
       },
     );
   }

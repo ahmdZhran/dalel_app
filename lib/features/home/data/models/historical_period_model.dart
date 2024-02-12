@@ -11,7 +11,7 @@ class HistoricalPeriodsModel {
       required this.image,
       required this.discription,
       required this.wars});
-  factory HistoricalPeriodsModel.fromJason(jsonData) {
+  factory HistoricalPeriodsModel.fromJson(jsonData) {
     return HistoricalPeriodsModel(
         name: jsonData[FireBaseStrings.name],
         image: jsonData[FireBaseStrings.image],
