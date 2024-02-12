@@ -29,7 +29,7 @@ class HistoricalPeriod extends StatelessWidget {
               separatorBuilder: (context, index) {
                 return const SizedBox(width: 20);
               },
-              itemCount: 2,
+              itemCount: snapshot.data!.docs.length,
             ),
           );
         }
