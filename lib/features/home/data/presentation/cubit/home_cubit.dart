@@ -18,19 +18,17 @@ class HomeCubit extends Cubit<HomeState> {
       emit(GetHistoricalPeriodLoading());
 
       // Fetch historical periods from Firestore
-      await FirebaseFirestore.instance
+      QuerySnapshot snapshot = await FirebaseFirestore.instance
           .collection('historical_period')
-          .get()
-          .then(
-            (value) => value.docs.forEach(
-              (element) {
-                // Convert Firestore document data into HistoricalPeriodsModel
-                historicalPeriodModels.add(
-                  HistoricalPeriodsModel.fromJson(element.data()),
-                );
-              },
-            ),
-          );
+          .get();
+
+      // Iterate over the documents using a for loop
+      for (DocumentSnapshot doc in snapshot.docs) {
+        // Convert Firestore document data into HistoricalPeriodsModel
+        historicalPeriodModels.add(
+          HistoricalPeriodsModel.fromJson(doc.data()),
+        );
+      }
 
       // Emit success state after successfully fetching historical periods
       emit(GetHistoricalPeriodSuccess());
