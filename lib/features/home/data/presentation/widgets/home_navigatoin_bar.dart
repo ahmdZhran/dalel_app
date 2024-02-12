@@ -1,3 +1,6 @@
+import 'package:dalel_app/features/home/data/presentation/cubit/home_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../../core/utls/app_assets.dart';
 import '../../../../../core/utls/app_color.dart';
 import '../../../../cart/presentation/view/cart_view.dart';
@@ -34,7 +37,10 @@ class HomeNavBarWidget extends StatelessWidget {
 
 List<Widget> _buildScreens() {
   return [
-    const HomeView(),
+    BlocProvider(
+      create: (context) => HomeCubit(),
+      child: const HomeView(),
+    ),
     const CartView(),
     const SearchView(),
     const ProfileView()
