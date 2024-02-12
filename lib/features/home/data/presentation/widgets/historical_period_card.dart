@@ -1,7 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
 import 'package:dalel_app/features/home/data/models/historical_period_model.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 class HistoricalPeriodItem extends StatelessWidget {
   const HistoricalPeriodItem({Key? key, required this.historicalPeriodsModel})
@@ -54,13 +56,22 @@ class HistoricalPeriodItem extends StatelessWidget {
     return ClipRRect(
       borderRadius: const BorderRadius.only(
           topRight: Radius.circular(12), bottomRight: Radius.circular(12)),
-      child: Container(
-        height: 96,
-        width: 60,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(historicalPeriodsModel.image)),
+      child: SizedBox(
+        height: 100,
+        width: 70,
+        child: CachedNetworkImage(
+          placeholder: (context, url) => Shimmer.fromColors(
+            baseColor: AppColors.grey,
+            highlightColor: Colors.white,
+            child: Container(
+              height: 64,
+              width: 47,
+              color: AppColors.grey,
+            ),
+          ),
+          fit: BoxFit.cover,
+          imageUrl: historicalPeriodsModel.image,
+          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
     );
