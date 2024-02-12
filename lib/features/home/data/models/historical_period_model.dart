@@ -1,21 +1,19 @@
+import 'package:dalel_app/core/models/data_model.dart';
 import 'package:dalel_app/core/utls/app_strings.dart';
 
-class HistoricalPeriodsModel {
-  final String name;
-  final String image;
-  final String discription;
+class HistoricalPeriodsModel extends DataModel {
   final Map<String, dynamic> wars;
 
   HistoricalPeriodsModel(
-      {required this.name,
-      required this.image,
-      required this.discription,
+      {required super.name,
+      required super.image,
+      required super.description,
       required this.wars});
   factory HistoricalPeriodsModel.fromJson(jsonData) {
     return HistoricalPeriodsModel(
         name: jsonData[FireBaseStrings.name],
         image: jsonData[FireBaseStrings.image],
-        discription: jsonData[FireBaseStrings.image],
+        description: jsonData[FireBaseStrings.image],
         wars: jsonData[FireBaseStrings.wars]);
   }
 }
