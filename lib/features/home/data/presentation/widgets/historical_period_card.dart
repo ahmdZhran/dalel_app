@@ -1,11 +1,12 @@
-import 'package:dalel_app/core/utls/app_assets.dart';
 import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
+import 'package:dalel_app/features/home/data/models/historical_period_model.dart';
 import 'package:flutter/material.dart';
 
 class HistoricalPeriodItem extends StatelessWidget {
-  const HistoricalPeriodItem({Key? key}) : super(key: key);
-
+  const HistoricalPeriodItem({Key? key, required this.historicalPeriodsModel})
+      : super(key: key);
+  final HistoricalPeriodsModel historicalPeriodsModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +39,7 @@ class HistoricalPeriodItem extends StatelessWidget {
       height: 47,
       width: 62,
       child: Text(
-        'Ancient Egypt',
+        historicalPeriodsModel.name,
         maxLines: 2,
         textAlign: TextAlign.center,
         style: CustomTextStyles.poppins500style18.copyWith(
@@ -50,14 +51,16 @@ class HistoricalPeriodItem extends StatelessWidget {
   }
 
   Widget _buildImage() {
-    return Container(
-      height: 96,
-      width: 60,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(
-            Assets.imageFrame,
-          ),
+    return ClipRRect(
+      borderRadius: const BorderRadius.only(
+          topRight: Radius.circular(12), bottomRight: Radius.circular(12)),
+      child: Container(
+        height: 96,
+        width: 60,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              fit: BoxFit.cover,
+              image: NetworkImage(historicalPeriodsModel.image)),
         ),
       ),
     );

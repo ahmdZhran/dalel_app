@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dalel_app/features/home/data/models/historical_period_model.dart';
 import 'package:dalel_app/features/home/data/presentation/widgets/historical_period_card.dart';
 import 'package:flutter/material.dart';
 
@@ -19,12 +20,19 @@ class HistoricalPeriod extends StatelessWidget {
         }
 
         if (snapshot.connectionState == ConnectionState.done) {
+          List<HistoricalPeriodsModel> historicalPeriods = [];
+          for (int i = 0; i < snapshot.data!.docs.length; i++) {
+            historicalPeriods
+                .add(HistoricalPeriodsModel.fromJason(snapshot.data!.docs[i]));
+          }
           return SizedBox(
             height: 96,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return const HistoricalPeriodItem();
+                return HistoricalPeriodItem(
+                  historicalPeriodsModel: historicalPeriods[index],
+                );
               },
               separatorBuilder: (context, index) {
                 return const SizedBox(width: 20);
@@ -35,16 +43,6 @@ class HistoricalPeriod extends StatelessWidget {
         }
 
         return const Text("loading");
-        // return  Column(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children: [
-        //     const CustomHeaderText(text: AppStrings.historicalPeriods),
-        //     const SizedBox(height: 20),
-        //     Text(snapshot.data!.docs[0]['name']),
-        //     const HistoricalPeriod(),
-        //     const SizedBox(height: 40),
-        //   ],
-        // );
       },
     );
   }
