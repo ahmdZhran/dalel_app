@@ -9,14 +9,23 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
   List<HistoricalPeriodsModel> historicalPeriodModels = [];
   getHistoricalPeriods() async {
-    await FirebaseFirestore.instance.collection('historical_period').get().then(
-          (value) => value.docs.forEach(
-            (element) {
-              historicalPeriodModels.add(
-                HistoricalPeriodsModel.fromJason(element.data()),
-              );
-            },
-          ),
-        );
+    try {
+      emit(GetHistoricalPeriodLoading());
+      await FirebaseFirestore.instance
+          .collection('historical_period')
+          .get()
+          .then(
+            (value) => value.docs.forEach(
+              (element) {
+                historicalPeriodModels.add(
+                  HistoricalPeriodsModel.fromJason(element.data()),
+                );
+              },
+            ),
+          );
+      emit(GetHistoricalPeriodSuccess());
+    } on Exception catch (e) {
+      emit(GetHistoricalPeriodFailer(errMessage: e.toString()));
+    }
   }
 }
