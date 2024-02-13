@@ -2,7 +2,7 @@ import 'package:dalel_app/core/widgets/custom_header_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/utls/app_strings.dart';
-import '../../widgets/historical_period_item.dart';
+import '../../../../../../core/widgets/custom_data_list_item.dart';
 
 class HistoricalPeriodSection extends StatelessWidget {
   const HistoricalPeriodSection({super.key});
