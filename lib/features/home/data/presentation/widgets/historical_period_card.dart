@@ -41,7 +41,7 @@ class HistoricalPeriodItem extends StatelessWidget {
       height: 47,
       width: 62,
       child: Text(
-        historicalPeriodsModel.name,
+        historicalPeriodsModel.wars[0].name,
         maxLines: 2,
         textAlign: TextAlign.center,
         style: CustomTextStyles.poppins500style18.copyWith(
@@ -70,7 +70,7 @@ class HistoricalPeriodItem extends StatelessWidget {
             ),
           ),
           fit: BoxFit.cover,
-          imageUrl: historicalPeriodsModel.image,
+          imageUrl: historicalPeriodsModel.wars[0].image,
           errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
