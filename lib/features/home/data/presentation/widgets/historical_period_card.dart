@@ -1,14 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dalel_app/core/models/data_model.dart';
 import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
-import 'package:dalel_app/features/home/data/models/historical_period_model.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-class HistoricalPeriodItem extends StatelessWidget {
-  const HistoricalPeriodItem({Key? key, required this.historicalPeriodsModel})
+class CustomDataListViewItem extends StatelessWidget {
+  const CustomDataListViewItem({Key? key, required this.model})
       : super(key: key);
-  final HistoricalPeriodsModel historicalPeriodsModel;
+  final DataModel model;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,7 +41,7 @@ class HistoricalPeriodItem extends StatelessWidget {
       height: 47,
       width: 62,
       child: Text(
-        historicalPeriodsModel.wars[0].name,
+        model.name,
         maxLines: 2,
         textAlign: TextAlign.center,
         style: CustomTextStyles.poppins500style18.copyWith(
@@ -70,7 +70,7 @@ class HistoricalPeriodItem extends StatelessWidget {
             ),
           ),
           fit: BoxFit.cover,
-          imageUrl: historicalPeriodsModel.wars[0].image,
+          imageUrl: model.image,
           errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
