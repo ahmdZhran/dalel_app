@@ -16,7 +16,7 @@ class CustomDataListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        customNavigate(context, routePath);
+        customNavigate(context, routePath, extra: model);
       },
       child: Container(
         height: 100,

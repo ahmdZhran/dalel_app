@@ -1,3 +1,4 @@
+import 'package:dalel_app/features/home/data/models/historical_period_model.dart';
 import 'package:dalel_app/features/home/data/presentation/views/historical_period_details.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -55,7 +56,8 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(
       path: '/historicalPeriodsDetailView',
-      builder: (context, state) => const HistoricalPeriodDetailsView(),
+      builder: (context, state) => HistoricalPeriodDetailsView(
+          historicalPeriodModel: state.extra as HistoricalPeriodsModel),
     ),
   ],
 );
