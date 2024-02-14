@@ -35,4 +35,7 @@ class Assets {
   static const String userActive = "assets/image/user_active.svg";
   static const String search = "assets/image/search.svg";
   static const String searchActive = "assets/image/search_active.svg";
+  // assets for details view
+  static const String lifeKey = "assets/image/Vector.svg";
+  static const String pyramids = "assets/image/pyramids.svg";
 }
