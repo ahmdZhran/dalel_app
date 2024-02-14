@@ -30,7 +30,7 @@ class PeriodDetailsSection extends StatelessWidget {
               SvgPicture.asset(Assets.lifeKey)
             ],
           ),
-          const SizedBox(height: 47),
+          const SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -44,7 +44,7 @@ class PeriodDetailsSection extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: SizedBox(
-                      height: 220,
+                      height: 200,
                       width: 200,
                       child: Text(
                         description,
