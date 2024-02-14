@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dalel_app/core/functions/navigator_method.dart';
 import 'package:dalel_app/core/models/data_model.dart';
 import 'package:dalel_app/core/utls/app_color.dart';
 import 'package:dalel_app/core/utls/text_styles.dart';
@@ -6,32 +7,39 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CustomDataListViewItem extends StatelessWidget {
-  const CustomDataListViewItem({Key? key, required this.model})
+  const CustomDataListViewItem(
+      {Key? key, required this.model, required this.routePath})
       : super(key: key);
   final DataModel model;
+  final String routePath;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      width: 180,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.grey,
-            blurRadius: 7,
-            offset: const Offset(0, 5),
-          ),
-        ],
-        color: Colors.white,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const SizedBox(),
-          _buildText(),
-          _buildImage(),
-        ],
+    return GestureDetector(
+      onTap: () {
+        customNavigate(context, routePath);
+      },
+      child: Container(
+        height: 100,
+        width: 180,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.grey,
+              blurRadius: 7,
+              offset: const Offset(0, 5),
+            ),
+          ],
+          color: Colors.white,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const SizedBox(),
+            _buildText(),
+            _buildImage(),
+          ],
+        ),
       ),
     );
   }

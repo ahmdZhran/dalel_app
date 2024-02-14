@@ -24,7 +24,8 @@ class HistoricalPeriod extends StatelessWidget {
         return state is GetHistoricalPeriodLoading
             ? const CustomShimmerCategory() // CustomShimmerCategory shows a shimmer effect
             : CustomDataListView(
-                dataList: context.read<HomeCubit>().historicalPeriodModels);
+                dataList: context.read<HomeCubit>().historicalPeriodModels,
+                routePath: "/historicalPeriodsDetailView");
       },
     );
   }

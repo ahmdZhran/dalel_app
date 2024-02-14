@@ -7,8 +7,10 @@ class CustomDataListView extends StatelessWidget {
   const CustomDataListView({
     super.key,
     required this.dataList,
+    required this.routePath,
   });
   final List<DataModel> dataList;
+  final String routePath;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -17,7 +19,8 @@ class CustomDataListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           // Display HistoricalPeriodItem for each historical period model
-          return CustomDataListViewItem(model: dataList[index]);
+          return CustomDataListViewItem(
+              model: dataList[index], routePath: routePath);
         },
         separatorBuilder: (context, index) {
           // Add spacing between HistoricalPeriodItems
