@@ -18,6 +18,8 @@ class HistoricalPeriodDetailsView extends StatelessWidget {
           SliverToBoxAdapter(
               child: PeriodDetailsSection(
             periodNam: historicalPeriodModel.name,
+            description: historicalPeriodModel.description,
+            imageUrl: historicalPeriodModel.image,
           )),
         ],
       ),
