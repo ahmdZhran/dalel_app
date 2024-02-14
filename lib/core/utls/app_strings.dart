@@ -24,7 +24,7 @@ abstract class AppStrings {
           "Enter your register Email below to can reset your password",
       //!Home Strings
       recommendations = "Recommendations",
-      aboutAncientEgypt = "About Ancient Egypt",
+      about = "about",
       ancientEgyptWars = "Ancient Egypt Wars",
       //!Search Strings
       searchDeepIntoTheHistory = "Search deep into the history",

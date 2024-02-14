@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/custom_app_bar.dart';
+import '../custom_app_bar.dart';
 
 class HomeAppBarSection extends StatelessWidget {
   const HomeAppBarSection({super.key});

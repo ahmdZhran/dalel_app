@@ -1,6 +1,6 @@
 import '../../../../../../core/utls/app_strings.dart';
 import '../../../../../../core/widgets/custom_header_text.dart';
-import '../../widgets/list_of_historical_souvenirs.dart';
+import '../list_of_historical_souvenirs.dart';
 import 'package:flutter/material.dart';
 
 class HistoricalSouvinersSection extends StatelessWidget {
