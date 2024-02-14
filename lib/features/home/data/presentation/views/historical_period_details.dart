@@ -27,22 +27,3 @@ class HistoricalPeriodDetailsView extends StatelessWidget {
     ));
   }
 }
-
-class PeriodDetailsSection extends StatelessWidget {
-  const PeriodDetailsSection({super.key, required this.periodNam});
-  final String periodNam;
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            CustomHeaderText(text: "${AppStrings.about} $periodNam"),
-            const SizedBox(width: 7),
-            SvgPicture.asset(Assets.lifeKey)
-          ],
-        )
-      ],
-    );
-  }
-}
