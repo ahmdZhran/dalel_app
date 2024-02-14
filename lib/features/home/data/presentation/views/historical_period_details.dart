@@ -1,11 +1,9 @@
 import 'package:dalel_app/features/home/data/models/historical_period_model.dart';
 import 'package:dalel_app/features/home/data/presentation/widgets/home_sections/app_bar_section.dart';
-import 'package:dalel_app/features/home/data/presentation/widgets/list_of_historical_character.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/utls/app_strings.dart';
-import '../../../../../core/widgets/custom_header_text.dart';
 import '../widgets/period_details_section.dart';
 import '../widgets/period_wars_section.dart';
+import '../widgets/recommendation_section.dart';
 
 class HistoricalPeriodDetailsView extends StatelessWidget {
   const HistoricalPeriodDetailsView(
@@ -40,22 +38,5 @@ class HistoricalPeriodDetailsView extends StatelessWidget {
         ),
       ),
     ));
-  }
-}
-
-class RecommendationSectionView extends StatelessWidget {
-  const RecommendationSectionView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 40),
-        CustomHeaderText(text: AppStrings.recommendations),
-        SizedBox(height: 16),
-        ListOfHistoricalCharacter()
-      ],
-    );
   }
 }
